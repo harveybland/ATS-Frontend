@@ -1,0 +1,124 @@
+<form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">Name</span>
+        </div>
+        <input
+          name="Name"
+          formControlName="name"
+          id="Name"
+          placeholder="Name"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">Email</span>
+        </div>
+        <input
+          name="email"
+          formControlName="email"
+          id="email"
+          placeholder="email"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">Phone</span>
+        </div>
+        <input
+          name="Phone"
+          formControlName="phone"
+          id="Phone"
+          placeholder="Phone"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">Website</span>
+        </div>
+        <input
+          name="Website"
+          formControlName="website"
+          id="Website"
+          placeholder="Website"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">Company Name</span>
+        </div>
+        <input
+          name="Company"
+          formControlName="company"
+          id="Company"
+          placeholder="Company"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">suite</span>
+        </div>
+        <input
+          name="suite"
+          formControlName="suite"
+          id="suite"
+          placeholder="suite"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">street</span>
+        </div>
+        <input
+          name="street"
+          formControlName="street"
+          id="street"
+          placeholder="street"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">city</span>
+        </div>
+        <input
+          name="city"
+          formControlName="city"
+          id="city"
+          placeholder="city"
+        />
+      </label>
+    </div>
+    <div class="col-6">
+      <label class="input-wrapper">
+        <div class="input-header">
+          <span class="input__title">zipcode</span>
+        </div>
+        <input
+          name="zipcode"
+          formControlName="zipcode"
+          id="zipcode"
+          placeholder="zipcode"
+        />
+      </label>
+    </div>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>

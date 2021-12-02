@@ -1,0 +1,268 @@
+.row {
+  display: block;
+  letter-spacing: -0.31em;
+  box-sizing: border-box;
+  margin: 0 -10px;
+  text-align: left;
+}
+
+.box {
+  border-radius: $border-radius;
+  box-shadow: 0px 0px 3px 2px rgba(100, 100, 100, 0.1);
+}
+
+.col {
+  display: inline-block;
+  letter-spacing: normal;
+  margin-bottom: 20px;
+  vertical-align: top;
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.col-1 {
+  width: 1% * 100 / 12;
+  @extend .col;
+}
+
+.col-2 {
+  width: 1% * 200 / 12;
+  @extend .col;
+}
+
+.col-3 {
+  width: 1% * 300 / 12;
+  @extend .col;
+}
+
+.col-4 {
+  width: 1% * 400 / 12;
+  @extend .col;
+}
+
+.col-5 {
+  width: 1% * 500 / 12;
+  @extend .col;
+}
+
+.col-6 {
+  width: 1% * 600 / 12;
+  @extend .col;
+}
+
+.col-7 {
+  width: 1% * 700 / 12;
+  @extend .col;
+}
+
+.col-8 {
+  width: 1% * 800 / 12;
+  @extend .col;
+}
+
+.col-9 {
+  width: 1% * 900 / 12;
+  @extend .col;
+}
+
+.col-10 {
+  width: 1% * 1000 / 12;
+  @extend .col;
+}
+
+.col-11 {
+  width: 1% * 1100 / 12;
+  @extend .col;
+}
+
+.col-12 {
+  width: 1% * 1200 / 12;
+  @extend .col;
+}
+
+.grid-group {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 5px;
+  padding: 20px;
+  border-top: 1px solid $color-light-gray;
+  background-color: $color-lighter-gray;
+
+  @for $i from 1 through 3 {
+    &.g-col-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  &.p-0 {
+    padding: 0;
+    border-top: 0;
+    background-color: unset;
+  }
+
+  .grid-group {
+    padding: 0;
+    border: 0;
+
+    .grid {
+      padding: 0;
+      border: 0;
+
+      :hover,
+      :focus {
+        background: none;
+      }
+    }
+  }
+
+  &-title {
+    margin: 0 0 7px;
+  }
+
+  .item-title-outer {
+    margin: 0;
+    padding: 10px;
+    background-color: $background-grey;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    + .grid {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .grid {
+    padding: 10px 15px;
+    background-color: $color-white;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid $background-grey;
+    border-radius: 3px;
+    position: relative;
+    transition: background-color 0.1s linear;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($color: $color-white, $alpha: 0.7);
+
+      .grid-item {
+        [class*="material-icons"] {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .grid-item {
+      font-weight: 500;
+      margin: 0;
+      display: block;
+      width: 100%;
+
+      [class*="material-icons"] {
+        color: $color-success;
+        font-size: 3rem;
+        position: absolute;
+        left: 5px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 30px;
+        transition: transform 0.2s linear;
+
+        + .item-title-inner {
+          padding-left: 50px;
+        }
+      }
+
+      .item-title-inner {
+        color: $color-dark-gray;
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: 100%;
+        padding-left: 0;
+        margin: 0;
+        transition: transform 0.2s linear;
+
+        span {
+          color: #000;
+          font-size: 1.2rem;
+          display: block;
+
+          &:first-of-type {
+            margin-top: 5px;
+          }
+        }
+      }
+
+      .status {
+        font-size: 1.1rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 0 auto;
+        transition: transform 0.2s linear;
+      }
+
+      p {
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.status {
+      &-declined {
+        .history .details span {
+          &.status {
+            color: $color-danger-light;
+          }
+        }
+      }
+    }
+
+    .history {
+      .details {
+        margin-bottom: 7px;
+
+        span {
+          font-size: 1.3rem;
+          color: $color-dark-gray;
+
+          &.title {
+            color: #000;
+            font-size: 1.4rem;
+            font-weight: 500;
+            padding-bottom: 7px;
+            margin-bottom: 6px;
+            border-bottom: 1px dotted $background-grey;
+            display: block;
+          }
+
+          &.status {
+            position: relative;
+            margin-top: 10px;
+            display: inline-block;
+          }
+
+          &.company {
+            font-size: 1.4rem;
+            font-weight: 500;
+            display: block;
+          }
+        }
+      }
+
+      &.description__extra {
+        margin-top: 5px;
+      }
+    }
+  }
+}

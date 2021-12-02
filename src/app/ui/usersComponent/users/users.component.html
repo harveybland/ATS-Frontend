@@ -1,0 +1,7 @@
+<div *ngFor="let item of users$ | async" style="display: flex">
+  <div style="margin-right: 10px">{{ item.id }}</div>
+  <div style="margin-right: 10px">{{ item.name }}</div>
+  <button class="btn btn-success i-b" [routerLink]="['/user/', item.id]">
+    View
+  </button>
+</div>

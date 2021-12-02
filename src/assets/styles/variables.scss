@@ -1,0 +1,91 @@
+/* New */
+$color-primary: #9ae8fa;
+$color-secondary: #383547;
+// $color-text: #2B2B2B;
+$color-text: #383838;
+$color-border: #c6c7c7;
+
+$color-gray: #c6c7c7;
+$color-dark-gray: #a8a8a8;
+
+$color-light-blue: #6ae3fe;
+// $color-lighter-blue: #9AE8FA;
+$color-lighter-blue: #ddf0ff;
+$color-lighter-than-light-blue: #f4f8fb;
+$color-light-green: #49f895;
+$color-purple: #393072;
+$color-darker-blue: #24222f;
+$color-dark-blue: #383547;
+$color-danger-light: #fe6464;
+$color-danger-lighter: #f06a6a;
+$color-danger-lighter-than-light: #ff6a79;
+
+$color-danger: #fe6a79;
+
+$border-default: 1px solid $color-gray;
+$border-radius: 4px;
+$border-radius-small: 2px;
+
+/* Old */
+$color-blue-chill: #118aab;
+$color-persian-red: #c8372b;
+
+// $color-dark-gray: $color-primary;
+$color-light-gray: #e2e4e6;
+$color-lighter-gray: lighten(#e2e4e6, 5%);
+// $color-darker-blue: #345b69;
+// $color-dark-blue: #3c6473;
+// $color-light-blue: #41788d;
+// $color-lighter-blue: #b1d2de;
+// $color-lighter-than-light-blue: #E2F3F8;
+// $color-light-green: #dae6da;
+$color-gold: #d0b26b;
+// $color-danger: #d01616;
+$color-warn: #ffc107;
+$color-success: #1e7e34;
+// $color-border: #e2e2e2;
+$color-green: #bbdc97;
+$color-white: #fff;
+$color-black: #000;
+// $border-radius: 4px;
+$primary-font: #333;
+$background-grey: #d4d3d3;
+$background-light: #f8f8f8;
+$background-twilight-blue: #f0fbff;
+$background-gray-dark: #949393;
+// $color-danger-light: #e84444;
+// $color-danger-lighter: #FF7F7F;
+$nav-height: 60px;
+$header-height: 60px;
+
+%card {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1);
+  border-radius: $border-radius;
+}
+
+%card-dark {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+%input-simple {
+  border-radius: $border-radius;
+  border: solid 1px $color-border;
+  padding: 7px 0;
+  font-size: 1rem;
+  text-indent: 4px;
+}
+
+%btn-simple {
+  border-radius: $border-radius;
+  padding: 10px 15px;
+  text-align: center;
+  border: solid 1px $color-border;
+}
+
+%maxBodyHeight {
+  height: calc(100vh - #{($header-height * 2) + 15});
+}
+
+%maxInnerBodyHeight {
+  height: calc(100vh - 260px);
+}

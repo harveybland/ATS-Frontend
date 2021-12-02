@@ -1,0 +1,14 @@
+<div style="text-decoration: underline">Posts</div>
+<div *ngFor="let postItem of posts$ | async" style="display: flex">
+  <div style="margin-right: 10px">{{ postItem.title }}</div>
+  <button class="btn btn-success i-b" [routerLink]="['/post/', postItem.id]">
+    View
+  </button>
+</div>
+
+<br />
+
+<div style="text-decoration: underline">Axis</div>
+<div *ngFor="let item of axis$ | async">
+  <div>{{ item }}</div>
+</div>
