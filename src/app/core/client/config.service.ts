@@ -20,10 +20,10 @@ export class ConfigService {
   }
 
   users() {
-    return 'https://jsonplaceholder.typicode.com/users'
+    return 'http://localhost:4002/api/users'
   }
 
   user(id: number) {
-    return `https://jsonplaceholder.typicode.com/users/${id}`
+    return `http://localhost:4002/api/user/${id}`
   }
-}
+} 

@@ -1,7 +1,18 @@
-<div *ngFor="let item of users$ | async" style="display: flex">
-  <div style="margin-right: 10px">{{ item.id }}</div>
-  <div style="margin-right: 10px">{{ item.name }}</div>
-  <button class="btn btn-success i-b" [routerLink]="['/user/', item.id]">
-    View
-  </button>
+<div style="text-decoration: underline">Users</div>
+<div *ngFor="let item of users$ | async" class="list__style">
+  <div>{{ item.firstname }}</div>
+  <div>{{ item.surname }}</div>
+  <div>{{ item.address }}</div>
+  <div>{{ item.city }}</div>
+  <div>{{ item.postcode }}</div>
+  <div>{{ item.county }}</div>
+  <div>{{ item.mobile }}</div>
+  <div>{{ item.email }}</div>
+  <div>{{ item.DOB }}</div>
+  <div>{{ item.age }}</div>
+  <div>
+    <button class="btn btn-success i-b" [routerLink]="['/user/', item._id]">
+      View
+    </button>
+  </div>
 </div>

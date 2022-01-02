@@ -1,9 +1,7 @@
 <div style="text-decoration: underline">Posts</div>
-<div *ngFor="let postItem of posts$ | async" style="display: flex">
-  <div style="margin-right: 10px">{{ postItem.title }}</div>
-  <button class="btn btn-success i-b" [routerLink]="['/post/', postItem.id]">
-    View
-  </button>
+<div *ngFor="let postItem of posts$ | async" class="list__style">
+  <div>{{ postItem.id }}</div>
+  <div>{{ postItem.title }}</div>
 </div>
 
 <br />

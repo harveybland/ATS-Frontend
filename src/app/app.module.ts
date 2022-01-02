@@ -1,3 +1,4 @@
+import { VacanciesComponent } from './ui/vacancyComponent/vacancies/vacancies.component';
 import { GeniusFormsModule } from './core/modules/genius-forms.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,8 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostsService } from './ui/postsComponent/posts.service';
 import { PostsComponent } from './ui/postsComponent/posts/posts.component';
-import { PostComponent } from './ui/postsComponent/post/post.component';
-import { AlbumsComponent } from './ui/albumComponent/albums/albums.component';
 import { HeaderComponent } from './ui/header/header.component';
 import { HomeComponent } from './ui/home/home.component';
 import { UsersComponent } from './ui/usersComponent/users/users.component';
@@ -27,20 +26,16 @@ const routes: Routes = [
     component: PostsComponent,
   },
   {
-    path: 'albums',
-    component: AlbumsComponent
-  },
-  {
     path: 'users',
     component: UsersComponent
   },
   {
-    path: 'user/:id',
-    component: UserComponent
+    path: 'vacancies',
+    component: VacanciesComponent
   },
   {
-    path: 'post/:id',
-    component: PostComponent
+    path: 'user/:id',
+    component: UserComponent
   },
 ]
 
@@ -57,12 +52,11 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     PostsComponent,
-    PostComponent,
-    AlbumsComponent,
     HeaderComponent,
     HomeComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    VacanciesComponent
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]

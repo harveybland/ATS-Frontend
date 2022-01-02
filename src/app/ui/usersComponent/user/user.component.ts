@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { UserModel } from 'src/app/core/interface/api';
+import { UsersModel } from 'src/app/core/interface/api';
 
 @Component({
   selector: 'app-user',
@@ -13,16 +13,19 @@ import { UserModel } from 'src/app/core/interface/api';
 export class UserComponent implements OnInit {
 
   form: FormGroup = this._formBuilder.group({
-    name: new FormControl(''),
-    email: new FormControl(''),
+    _id: new FormControl(''),
+    firstname: new FormControl(''),
+    surname: new FormControl(''),
     phone: new FormControl(''),
     website: new FormControl(''),
-    company: new FormControl(''),
+    companyName: new FormControl(''),
     suite: new FormControl(''),
     street: new FormControl(''),
     city: new FormControl(''),
     zipcode: new FormControl(''),
   });
+
+  username?: string;
 
   constructor(private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
@@ -35,33 +38,16 @@ export class UserComponent implements OnInit {
       }),
       switchMap(id => {
         return this._usersService.getUser(id).pipe(tap(model => {
-          // Option 1
-          this.form.controls['website'].patchValue(model.website);
-          // Option 2
-          this.form.patchValue({
-            name: model.name
-          });
-          let userModel: UserModel = model
+          console.log(model)
+          this.username = model.firstname;
+          let userModel: UsersModel = model;
+          this.form.patchValue(userModel)
         }))
       })).subscribe();
   }
 
-  // generateModel() {
-  //   return {
-  //     name: this.form.controls.name.value,
-  //     email: this.form.controls.email.value,
-  //     phone: this.form.controls.phone.value,
-  //     website: this.form.controls.website.value,
-  //     company: this.form.controls.company.value,
-  //     suite: this.form.controls.suite.value,
-  //     street: this.form.controls.street.value,
-  //     city: this.form.controls.city.value,
-  //     zipcode: this.form.controls.zipcode.value,
-  //   };
-  // }
-
   onSubmit() {
-
+    console.log('ello world')
   }
 
 }

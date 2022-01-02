@@ -11,26 +11,23 @@ export interface AlbumModel {
     title?: string;
 }
 
-export interface UserModel {
-    id?: number;
-    name?: string;
-    username?: string;
+export interface UsersModel {
+    _id?: number;
+    firstname?: string;
+    surname?: string;
+    address?: string;
+    city?: string;
+    postcode?: string;
+    county?: string;
+    mobile?: string;
     email?: string;
-    address?: {
-        street?: string;
-        suite?: string;
-        city?: string;
-        zipcode?: number;
-        geo?: {
-            lat?: number;
-            lng?: number;
-        }
-    },
-    phone?: number;
-    website?: string;
-    company?: {
-        name?: string;
-        catchPhrase?: string;
-        bs?: string;
-    }
+    DOB?: string;
+    age?: string;
+    isDeleted?: false
 }
+
+// export interface CompanyModel {
+//     name?: string;
+//     catchPhrase?: string;
+//     bs?: string;
+// }
