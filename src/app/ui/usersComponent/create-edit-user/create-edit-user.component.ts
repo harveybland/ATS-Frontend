@@ -6,11 +6,11 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { UsersModel } from 'src/app/core/interface/api';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'app-create-edit-user',
+  templateUrl: './create-edit-user.component.html',
+  styleUrls: ['./create-edit-user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class CreateEditUserComponent implements OnInit {
 
   form: FormGroup = this._formBuilder.group({
     _id: new FormControl(''),

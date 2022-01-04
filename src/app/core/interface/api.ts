@@ -19,6 +19,7 @@ export interface UsersModel {
     city?: string;
     postcode?: string;
     county?: string;
+    country?: string;
     mobile?: string;
     email?: string;
     DOB?: string;

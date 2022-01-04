@@ -1,8 +1,14 @@
 <div style="text-decoration: underline">Posts</div>
-<div *ngFor="let postItem of posts$ | async" class="list__style">
+<div *ngFor="let postItem of posts$ | async | slice: 0:10" class="list__style">
   <div>{{ postItem.id }}</div>
   <div>{{ postItem.title }}</div>
 </div>
+
+<ng-select>
+  <ng-option *ngFor="let postItem of posts$ | async" [value]="postItem.id">{{
+    postItem.title
+  }}</ng-option>
+</ng-select>
 
 <br />
 
@@ -10,3 +16,11 @@
 <div *ngFor="let item of axis$ | async">
   <div>{{ item }}</div>
 </div>
+
+<ng-select
+  [items]="axis$ | async"
+  bindLabel="axis"
+  bindValue="id"
+  [clearable]="true"
+>
+</ng-select>

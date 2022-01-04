@@ -1,3 +1,6 @@
+<div>
+  <a routerLink="/user/">Create</a>
+</div>
 <div style="text-decoration: underline">Users</div>
 <div *ngFor="let item of users$ | async" class="list__style">
   <div>{{ item.firstname }}</div>
@@ -6,6 +9,7 @@
   <div>{{ item.city }}</div>
   <div>{{ item.postcode }}</div>
   <div>{{ item.county }}</div>
+  <div>{{ item.country }}</div>
   <div>{{ item.mobile }}</div>
   <div>{{ item.email }}</div>
   <div>{{ item.DOB }}</div>
