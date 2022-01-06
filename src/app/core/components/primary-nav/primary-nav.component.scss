@@ -1,9 +1,5 @@
 @import "../../../../assets/styles/variables.scss";
 
-h1 {
-  margin: 0;
-}
-
 a {
   cursor: pointer;
 }
@@ -18,7 +14,7 @@ ul {
   align-items: center;
   padding-left: 0;
   h1 {
-    margin: 13px;
+    margin: 13px !important;
   }
 }
 
@@ -26,18 +22,12 @@ ul {
   flex-grow: 1;
   justify-content: flex-end;
   display: flex;
-  margin: 20px 0;
-  display: flex;
   align-items: center;
   a {
     text-decoration: none;
     color: $dirty-white;
-    margin-right: 15px;
+    margin: 0 10px;
     font-size: 18px;
-  }
-  li:hover {
-    background-color: rgba(255, 59, 63, 0.6);
-    // background-color: green;
   }
 }
 
@@ -50,4 +40,8 @@ ul {
   height: 60px;
   z-index: 5;
   color: $dirty-white;
+}
+
+.is-active {
+  text-decoration: underline;
 }

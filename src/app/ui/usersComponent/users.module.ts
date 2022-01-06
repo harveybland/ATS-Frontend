@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GeniusFormsModule } from 'src/app/core/modules/genius-forms.module';
 import { ThirdPartyModule } from 'src/app/core/modules/third-party.module';
-import { MaterialModule } from 'src/app/core/modules/material.module';
 import { RouterModule, Routes } from '@angular/router';
 
 import { UsersComponent } from './users.component';
@@ -19,7 +18,7 @@ const routes: Routes = [
         component: UserListComponent
       },
       {
-        path: 'users/:id',
+        path: 'users/user/:id',
         component: UserComponent
       },
       {
@@ -35,11 +34,11 @@ const routes: Routes = [
     CommonModule,
     GeniusFormsModule,
     ThirdPartyModule,
-    MaterialModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     UsersComponent,
+    UserComponent,
     UserListComponent
   ]
 })

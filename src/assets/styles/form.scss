@@ -5,10 +5,6 @@
   padding: 20px 40px 40px;
   flex-direction: column;
   align-items: flex-start;
-  // border-style: solid none none;
-  // border-width: 1px;
-  // border-color: #c6c7c7;
-  // border-radius: 0;
   background-color: #efefef;
   .form__actions {
     display: flex;
@@ -25,7 +21,23 @@
 }
 
 .ats__body__inner {
-  padding: 0 20px;
+  padding: 20px 20px;
   position: relative;
-  padding-bottom: 40px;
+}
+
+.flex {
+  display: flex;
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.end {
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
 }

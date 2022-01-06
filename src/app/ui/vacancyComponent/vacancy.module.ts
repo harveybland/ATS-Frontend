@@ -4,7 +4,6 @@ import { VacancyComponent } from './vacancy.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GeniusFormsModule } from 'src/app/core/modules/genius-forms.module';
 import { ThirdPartyModule } from 'src/app/core/modules/third-party.module';
-import { MaterialModule } from 'src/app/core/modules/material.module';
 import { VacancyViewComponent } from './vacancyView/vacancyView.component';
 import { VacanciesComponent } from './vacancies/vacancies.component';
 
@@ -18,7 +17,7 @@ const routes: Routes = [
         component: VacanciesComponent
       },
       {
-        path: 'vacancy/vacancyView',
+        path: 'vacancies/vacancyView/:id',
         component: VacancyViewComponent
       },
       {
@@ -34,12 +33,12 @@ const routes: Routes = [
     CommonModule,
     GeniusFormsModule,
     ThirdPartyModule,
-    MaterialModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     VacancyComponent,
-    VacanciesComponent
+    VacanciesComponent,
+    VacancyViewComponent
   ]
 })
 export class VacancyModule { }

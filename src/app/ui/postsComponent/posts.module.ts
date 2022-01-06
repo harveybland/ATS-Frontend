@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { GeniusFormsModule } from 'src/app/core/modules/genius-forms.module';
 import { ThirdPartyModule } from 'src/app/core/modules/third-party.module';
-import { MaterialModule } from 'src/app/core/modules/material.module';
 import { PostsComponent } from './posts.component';
 
 const routes: Routes = [
@@ -18,9 +17,8 @@ const routes: Routes = [
     CommonModule,
     GeniusFormsModule,
     ThirdPartyModule,
-    MaterialModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
   declarations: [PostsComponent]
 })
-export class PostssModule { }
+export class PostsModule { }

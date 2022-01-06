@@ -1,22 +1,30 @@
-<div>
-  <a routerLink="/create">Create</a>
-</div>
-<div style="text-decoration: underline">Users</div>
-<div *ngFor="let item of users$ | async" class="list__style">
-  <div>{{ item.firstname }}</div>
-  <div>{{ item.surname }}</div>
-  <div>{{ item.address }}</div>
-  <div>{{ item.city }}</div>
-  <div>{{ item.postcode }}</div>
-  <div>{{ item.county }}</div>
-  <div>{{ item.country }}</div>
-  <div>{{ item.mobile }}</div>
-  <div>{{ item.email }}</div>
-  <div>{{ item.DOB }}</div>
-  <div>{{ item.age }}</div>
-  <div>
-    <button class="btn btn-success i-b" [routerLink]="['/user/', item._id]">
-      View
+<div class="flex">
+  <div class="start"><h1>Users</h1></div>
+  <div class="end">
+    <button mat-raised-button>
+      <a routerLink="/create">Create</a>
     </button>
   </div>
 </div>
+<ul *ngFor="let item of users$ | async" class="simple-bar">
+  <li>{{ item.firstname }}</li>
+  <li>{{ item.surname }}</li>
+  <li>{{ item.address }}</li>
+  <li>{{ item.city }}</li>
+  <li>{{ item.postcode }}</li>
+  <li>{{ item.county }}</li>
+  <li>{{ item.country }}</li>
+  <li>{{ item.mobile }}</li>
+  <li>{{ item.email }}</li>
+  <li>{{ item.DOB }}</li>
+  <li>{{ item.age }}</li>
+  <div class="end">
+    <button
+      mat-stroked-button
+      class="btn btn-success i-b"
+      [routerLink]="['user/', item._id]"
+    >
+      View
+    </button>
+  </div>
+</ul>

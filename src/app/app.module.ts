@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { PostsService } from './ui/postsComponent/posts.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './core/modules/material.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -23,7 +22,6 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     GeniusFormsModule,
     ThirdPartyModule,
-    MaterialModule
   ],
   declarations: [
     AppComponent,

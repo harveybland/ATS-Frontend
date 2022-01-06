@@ -5,8 +5,6 @@ import { CoreModule } from '../core/modules/core.module';
 import { RouterModule, Routes } from '@angular/router';
 import { GeniusFormsModule } from '../core/modules/genius-forms.module';
 import { ThirdPartyModule } from '../core/modules/third-party.module';
-import { MaterialModule } from '../core/modules/material.module';
-
 const routes: Routes = [
   {
     path: '',
@@ -26,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: 'posts',
-        loadChildren: () => import('./postsComponent/posts.module').then(o => o.PostssModule),
+        loadChildren: () => import('./postsComponent/posts.module').then(o => o.PostsModule),
       },
       {
         path: '',
@@ -43,7 +41,6 @@ const routes: Routes = [
     GeniusFormsModule,
     CoreModule,
     ThirdPartyModule,
-    MaterialModule,
     RouterModule.forChild(routes)
   ],
   declarations: [UiComponent]

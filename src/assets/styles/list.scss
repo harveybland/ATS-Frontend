@@ -10,7 +10,11 @@
   background-color: #fff;
 }
 
-ul.simple-bar li {
+li {
+  list-style: none;
+}
+
+ul.simple-bar {
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -22,9 +26,12 @@ ul.simple-bar li {
   position: relative;
   border: 1px solid #c6c7c7;
   cursor: pointer;
+  li {
+    padding-right: 10px;
+  }
 }
 
-ul.simple-bar li:hover,
-ul.simple-bar li:focus-within {
+ul.simple-bar:hover,
+ul.simple-bar:focus-within {
   background-color: #f4f8fb;
 }
