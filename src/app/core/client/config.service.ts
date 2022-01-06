@@ -11,19 +11,17 @@ export class ConfigService {
     return 'https://jsonplaceholder.typicode.com/posts'
   }
 
-  post(id: number) {
-    return `https://jsonplaceholder.typicode.com/posts/${id}`
-  }
-
-  albums() {
-    return 'https://jsonplaceholder.typicode.com/albums'
-  }
-
+  // Users
   users() {
     return 'http://localhost:4002/api/users'
   }
 
   user(id: number) {
     return `http://localhost:4002/api/user/${id}`
+  }
+
+  // Vacancies
+  vacancies() {
+    return 'http://localhost:4002/api/vacancies'
   }
 } 

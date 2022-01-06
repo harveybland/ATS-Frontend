@@ -26,10 +26,6 @@ export class PostsService {
     }))
   }
 
-  getPost(id: number) {
-    return this.http.get<PostModel>(this._configService.post(id))
-  }
-
   // Storage example
   create(model: PostModel) {
     return this.http.post<PostModel[]>(this._configService.posts(), model).pipe(map(resp => {

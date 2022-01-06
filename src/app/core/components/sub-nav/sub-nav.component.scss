@@ -1,0 +1,15 @@
+@import "../../../../assets/styles/variables.scss";
+
+p {
+  margin: 0;
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  background: $carbon;
+  color: #fff;
+  padding: 20px 0;
+}

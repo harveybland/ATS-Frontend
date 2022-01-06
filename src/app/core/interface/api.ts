@@ -27,6 +27,17 @@ export interface UsersModel {
     isDeleted?: false
 }
 
+export interface VacanciesModel {
+    _id?: number;
+    jobTitle?: string;
+    salary?: Number;
+    salaryType?: string;
+    businesArea?: string;
+    employmentType?: string;
+    contractType?: string;
+    location?: string;
+}
+
 // export interface CompanyModel {
 //     name?: string;
 //     catchPhrase?: string;

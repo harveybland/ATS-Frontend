@@ -1,1 +1,18 @@
-<p>vacancies</p>
+<div>
+  <a routerLink="/create">Create</a>
+</div>
+<ul *ngFor="let item of vacancies$ | async" class="list__style simple-bar">
+  <li>
+    <a [routerLink]="['/vacancyView']">
+      <div>
+        {{ item.jobTitle }}
+        {{ item.salary }}
+        {{ item.salaryType }}
+        {{ item.businesArea }}
+        {{ item.employmentType }}
+        {{ item.contractType }}
+        {{ item.location }}
+      </div>
+    </a>
+  </li>
+</ul>
