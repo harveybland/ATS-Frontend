@@ -12,6 +12,12 @@
 
 <br />
 
+<ng-select>
+  <ng-option *ngFor="let item of countries$ | async">{{ item.name }}</ng-option>
+</ng-select>
+
+<br />
+
 <div style="text-decoration: underline">Axis</div>
 <div *ngFor="let item of axis$ | async">
   <div>{{ item }}</div>

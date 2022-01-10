@@ -1,3 +1,4 @@
+import { StorageService } from './../../core/storage/storage.service';
 import { HttpClient } from '@angular/common/http';
 import { UsersModel } from './../../core/interface/api';
 import { Injectable } from '@angular/core';
@@ -14,6 +15,7 @@ export class UsersService {
   users$ = this._users$.asObservable();
 
   constructor(private _configService: ConfigService,
+    private storageService: StorageService,
     private http: HttpClient) { }
 
   getUsers() {
@@ -24,6 +26,28 @@ export class UsersService {
 
   getUser(id: number) {
     return this.http.get<UsersModel>(this._configService.user(id))
+  }
+
+  createUser(model: UsersModel) {
+    return this.http.post<UsersModel[]>(this._configService.users(), model).pipe(map(resp => {
+      this.storageService.clearItemTimeoutStorage(this._configService.users());
+      this._users$.next(resp)
+    }))
+  }
+
+  remove(model: UsersModel) {
+    return this.http.delete<UsersModel[]>(this._configService.user(model._id)).pipe(map(resp => {
+      this.storageService.clearItemTimeoutStorage(this._configService.users());
+      this.storageService.clearItemTimeoutStorage(this._configService.user(model._id));
+      this._users$.next(resp)
+    }))
+  }
+
+  updateUser(id: number, model: UsersModel) {
+    return this.http.put<UsersModel[]>(this._configService.user(id), model).pipe(map(resp => {
+      this.storageService.clearItemTimeoutStorage(this._configService.users());
+      this._users$.next(resp)
+    }))
   }
 
 }

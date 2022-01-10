@@ -5,14 +5,9 @@ export interface PostModel {
     body?: string;
 }
 
-export interface AlbumModel {
-    userId?: number,
-    id?: number;
-    title?: string;
-}
-
 export interface UsersModel {
-    _id?: number;
+    _id: number;
+    title?: string;
     firstname?: string;
     surname?: string;
     address?: string;
@@ -27,6 +22,15 @@ export interface UsersModel {
     isDeleted?: false
 }
 
+export interface countriesModel {
+    name: string;
+    code: string;
+}
+
+export interface titlesModel {
+    title: string;
+}
+
 export interface VacanciesModel {
     _id?: number;
     jobTitle?: string;
@@ -37,9 +41,3 @@ export interface VacanciesModel {
     contractType?: string;
     location?: string;
 }
-
-// export interface CompanyModel {
-//     name?: string;
-//     catchPhrase?: string;
-//     bs?: string;
-// }

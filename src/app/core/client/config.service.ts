@@ -7,10 +7,6 @@ export class ConfigService {
 
   constructor() { }
 
-  posts() {
-    return 'https://jsonplaceholder.typicode.com/posts'
-  }
-
   // Users
   users() {
     return 'http://localhost:4002/api/users'
@@ -23,5 +19,18 @@ export class ConfigService {
   // Vacancies
   vacancies() {
     return 'http://localhost:4002/api/vacancies'
+  }
+
+  // Data 
+  posts() {
+    return 'https://jsonplaceholder.typicode.com/posts'
+  }
+
+  countries() {
+    return 'http://localhost:4002/api/countries'
+  }
+
+  titles() {
+    return 'http://localhost:4002/api/titles'
   }
 } 

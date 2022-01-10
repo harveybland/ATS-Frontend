@@ -22,9 +22,6 @@ export class VacancyService {
     }))
   }
 
-  // getUser(id: number) {
-  //   return this.http.get<UsersModel>(this._configService.user(id))
-  // }
 
 
 }

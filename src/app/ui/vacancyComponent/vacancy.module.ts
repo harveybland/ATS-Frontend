@@ -1,10 +1,10 @@
+import { CreateEditVacancyComponent } from './create-edit-vacancy/create-edit-vacancy.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VacancyComponent } from './vacancy.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GeniusFormsModule } from 'src/app/core/modules/genius-forms.module';
 import { ThirdPartyModule } from 'src/app/core/modules/third-party.module';
-import { VacancyViewComponent } from './vacancyView/vacancyView.component';
 import { VacanciesComponent } from './vacancies/vacancies.component';
 
 const routes: Routes = [
@@ -17,8 +17,12 @@ const routes: Routes = [
         component: VacanciesComponent
       },
       {
-        path: 'vacancies/vacancyView/:id',
-        component: VacancyViewComponent
+        path: 'vacancies/vacancy/:id',
+        component: CreateEditVacancyComponent
+      },
+      {
+        path: 'vacancies/create',
+        component: CreateEditVacancyComponent
       },
       {
         path: '',
@@ -38,7 +42,7 @@ const routes: Routes = [
   declarations: [
     VacancyComponent,
     VacanciesComponent,
-    VacancyViewComponent
+    CreateEditVacancyComponent
   ]
 })
 export class VacancyModule { }

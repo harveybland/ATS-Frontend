@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
 
   posts$ = this._postsService.posts$;
+  users$ = this._postsService.users$;
+  countries$ = this._postsService.countries$;
 
   axis$: any;
 
@@ -18,14 +20,5 @@ export class PostsComponent implements OnInit {
     this._postsService.getPosts().subscribe();
     this.axis$ = this._postsService.getAxis();
   }
-
-  selectedCar: number;
-
-  cars = [
-    { id: 1, name: 'Volvo' },
-    { id: 2, name: 'Saab' },
-    { id: 3, name: 'Opel' },
-    { id: 4, name: 'Audi' },
-  ];
 
 }

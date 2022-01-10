@@ -1,3 +1,4 @@
+import { countriesModel, UsersModel } from 'src/app/core/interface/api';
 import { StorageService } from './../../core/storage/storage.service';
 import { ConfigService } from '../../core/client/config.service';
 import { Injectable } from '@angular/core';
@@ -14,23 +15,21 @@ export class PostsService {
   private _posts$ = new BehaviorSubject<PostModel[]>([]);
   posts$ = this._posts$.asObservable();
 
+  private _users$ = new BehaviorSubject<UsersModel[]>([]);
+  users$ = this._users$.asObservable();
+
+  private _countries$ = new BehaviorSubject<countriesModel[]>([]);
+  countries$ = this._countries$.asObservable();
+
   axis: string[] = [];
 
   constructor(private _configService: ConfigService,
-    private http: HttpClient,
-    private storageService: StorageService) { }
+    private http: HttpClient
+  ) { }
 
   getPosts() {
-    return this.http.get<PostModel[]>(this._configService.posts()).pipe(map(resp => {
-      this._posts$.next(resp)
-    }))
-  }
-
-  // Storage example
-  create(model: PostModel) {
-    return this.http.post<PostModel[]>(this._configService.posts(), model).pipe(map(resp => {
-      this.storageService.clearItemTimeoutStorage(this._configService.posts());
-      return this._posts$.next(resp)
+    return this.http.get<countriesModel[]>(this._configService.countries()).pipe(map(resp => {
+      this._countries$.next(resp)
     }))
   }
 
