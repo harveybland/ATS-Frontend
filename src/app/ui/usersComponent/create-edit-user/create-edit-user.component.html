@@ -6,14 +6,18 @@
           <div class="input-header">
             <span class="input__title">Title</span>
           </div>
-          <input
-            name="title"
-            formControlName="title"
-            id="title"
-            placeholder="title"
-          />
+          <ng-select
+            [clearable]="true"
+            [items]="titles$ | async"
+            formControlInput="titles"
+            bindLabel="value"
+            placeholder="Title"
+            bindValue="id"
+          >
+          </ng-select>
         </label>
       </div>
+      <div class="col-9"></div>
       <div class="col-3">
         <label class="input-wrapper">
           <div class="input-header">
@@ -22,8 +26,8 @@
           <input
             name="firstname"
             formControlName="firstname"
-            id="firstname"
-            placeholder="firstname"
+            class="input"
+            placeholder="First Name"
           />
         </label>
       </div>
@@ -35,25 +39,12 @@
           <input
             name="Surname"
             formControlName="surname"
-            id="Surname"
+            class="input"
             placeholder="Surname"
           />
         </label>
       </div>
-      <div class="col-3"></div>
-      <div class="col-3">
-        <label class="input-wrapper">
-          <div class="input-header">
-            <span class="input__title">Address</span>
-          </div>
-          <input
-            name="address"
-            formControlName="address"
-            id="address"
-            placeholder="address"
-          />
-        </label>
-      </div>
+      <div class="col-6"></div>
       <div class="col-3">
         <label class="input-wrapper">
           <div class="input-header">
@@ -62,8 +53,22 @@
           <input
             name="mobile"
             formControlName="mobile"
-            id="mobile"
-            placeholder="mobile"
+            class="input"
+            type="number"
+            placeholder="Mobile"
+          />
+        </label>
+      </div>
+      <div class="col-3">
+        <label class="input-wrapper">
+          <div class="input-header">
+            <span class="input__title">DOB</span>
+          </div>
+          <input
+            name="DOB"
+            formControlName="DOB"
+            class="input"
+            placeholder="DOB"
           />
         </label>
       </div>
@@ -72,7 +77,25 @@
           <div class="input-header">
             <span class="input__title">Age</span>
           </div>
-          <input name="age" formControlName="age" id="age" placeholder="age" />
+          <input
+            name="age"
+            formControlName="age"
+            class="input"
+            placeholder="Age"
+          />
+        </label>
+      </div>
+      <div class="col-3">
+        <label class="input-wrapper">
+          <div class="input-header">
+            <span class="input__title">Address</span>
+          </div>
+          <input
+            name="address"
+            formControlName="address"
+            class="input"
+            placeholder="Address"
+          />
         </label>
       </div>
       <div class="col-3">
@@ -83,8 +106,8 @@
           <input
             name="city"
             formControlName="city"
-            id="city"
-            placeholder="city"
+            class="input"
+            placeholder="City"
           />
         </label>
       </div>
@@ -96,8 +119,8 @@
           <input
             name="county"
             formControlName="county"
-            id="county"
-            placeholder="county"
+            class="input"
+            placeholder="County"
           />
         </label>
       </div>
@@ -109,8 +132,22 @@
           <input
             name="country"
             formControlName="country"
-            id="country"
-            placeholder="country"
+            class="input"
+            placeholder="Country"
+          />
+        </label>
+      </div>
+
+      <div class="col-3">
+        <label class="input-wrapper">
+          <div class="input-header">
+            <span class="input__title">Postcode</span>
+          </div>
+          <input
+            name="postcode"
+            formControlName="postcode"
+            class="input"
+            placeholder="Postcode"
           />
         </label>
       </div>
@@ -122,30 +159,9 @@
           <input
             name="email"
             formControlName="email"
-            id="email"
-            placeholder="email"
+            class="input"
+            placeholder="Email"
           />
-        </label>
-      </div>
-      <div class="col-3">
-        <label class="input-wrapper">
-          <div class="input-header">
-            <span class="input__title">Postcode</span>
-          </div>
-          <input
-            name="postcode"
-            formControlName="postcode"
-            id="postcode"
-            placeholder="postcode"
-          />
-        </label>
-      </div>
-      <div class="col-3">
-        <label class="input-wrapper">
-          <div class="input-header">
-            <span class="input__title">DOB</span>
-          </div>
-          <input name="DOB" formControlName="DOB" id="DOB" placeholder="DOB" />
         </label>
       </div>
     </div>

@@ -4,16 +4,15 @@
       <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
-            <span class="input__title">Title</span>
+            <span class="input__title">Job Title</span>
           </div>
-          <ng-select
-            [clearable]="true"
-            [items]="titles$ | async"
-            formControlInput="titles"
-            bindLabel="titles"
-            bindValue="id"
-          >
-          </ng-select>
+          <input
+            name="jobTitle"
+            formControlName="jobTitle"
+            class="input"
+            placeholder="Job Title"
+            class="input"
+          />
         </label>
       </div>
       <div class="col-1"></div>
@@ -25,9 +24,10 @@
           <input
             name="salary"
             formControlName="salary"
-            id="salary"
-            placeholder="salary"
+            class="input"
+            placeholder="Salary"
             type="number"
+            class="input"
           />
         </label>
       </div>
@@ -36,12 +36,14 @@
           <div class="input-header">
             <span class="input__title">Salary Type</span>
           </div>
-          <input
-            name="salaryType"
+          <ng-select
+            [items]="salaryType$ | async"
+            bindLabel="value"
             formControlName="salaryType"
-            id="salaryType"
-            placeholder="salaryType"
-          />
+            placeholder="Salary Type"
+            [clearable]="true"
+          >
+          </ng-select>
         </label>
       </div>
       <div class="col-3"></div>
@@ -50,12 +52,14 @@
           <div class="input-header">
             <span class="input__title">Business Area</span>
           </div>
-          <input
-            name="businessArea"
+          <ng-select
+            [items]="businessArea$ | async"
+            bindLabel="value"
             formControlName="businessArea"
-            id="businessArea"
-            placeholder="businessArea"
-          />
+            placeholder="Business Area"
+            [clearable]="true"
+          >
+          </ng-select>
         </label>
       </div>
       <div class="col-3">
@@ -63,12 +67,14 @@
           <div class="input-header">
             <span class="input__title">Employment Type</span>
           </div>
-          <input
-            name="employmentType"
+          <ng-select
+            [items]="employmentType$ | async"
+            bindLabel="value"
             formControlName="employmentType"
-            id="employmentType"
-            placeholder="employmentType"
-          />
+            placeholder="Employment Type"
+            [clearable]="true"
+          >
+          </ng-select>
         </label>
       </div>
       <div class="col-3">
@@ -76,25 +82,27 @@
           <div class="input-header">
             <span class="input__title">Contract Type</span>
           </div>
-          <input
-            name="contractType"
+          <ng-select
+            [items]="contractType$ | async"
+            bindLabel="value"
             formControlName="contractType"
-            id="contractType"
-            placeholder="contractType"
-          />
+            placeholder="Contract Type"
+            [clearable]="true"
+          >
+          </ng-select>
         </label>
       </div>
       <div class="col-3">
         <label class="input-wrapper">
           <div class="input-header">
-            <span class="input__title">location</span>
+            <span class="input__title">Location</span>
           </div>
           <ng-select
+            [items]="location$ | async"
+            bindLabel="name"
+            formControlName="location"
+            placeholder="Location"
             [clearable]="true"
-            [items]="countries$ | async"
-            formControlInput="country"
-            bindLabel="countries"
-            bindValue="id"
           >
           </ng-select>
         </label>

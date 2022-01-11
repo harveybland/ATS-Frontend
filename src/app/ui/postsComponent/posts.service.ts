@@ -1,5 +1,4 @@
-import { countriesModel, UsersModel } from 'src/app/core/interface/api';
-import { StorageService } from './../../core/storage/storage.service';
+import { locationModel, UsersModel } from 'src/app/core/interface/api';
 import { ConfigService } from '../../core/client/config.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -18,8 +17,8 @@ export class PostsService {
   private _users$ = new BehaviorSubject<UsersModel[]>([]);
   users$ = this._users$.asObservable();
 
-  private _countries$ = new BehaviorSubject<countriesModel[]>([]);
-  countries$ = this._countries$.asObservable();
+  private _location$ = new BehaviorSubject<locationModel[]>([]);
+  location$ = this._location$.asObservable();
 
   axis: string[] = [];
 
@@ -28,8 +27,14 @@ export class PostsService {
   ) { }
 
   getPosts() {
-    return this.http.get<countriesModel[]>(this._configService.countries()).pipe(map(resp => {
-      this._countries$.next(resp)
+    return this.http.get<PostModel[]>(this._configService.posts()).pipe(map(resp => {
+      this._posts$.next(resp)
+    }))
+  }
+
+  getLocation() {
+    return this.http.get<locationModel[]>(this._configService.location()).pipe(map(resp => {
+      this._location$.next(resp)
     }))
   }
 

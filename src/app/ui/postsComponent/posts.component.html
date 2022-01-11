@@ -1,27 +1,45 @@
-<div style="text-decoration: underline">Posts</div>
+<!-- <div style="text-decoration: underline">Posts</div>
 <div *ngFor="let postItem of posts$ | async | slice: 0:10" class="list__style">
   <div>{{ postItem.id }}</div>
   <div>{{ postItem.title }}</div>
-</div>
+</div> -->
 
+<h1>Posts</h1>
+<!-- 
 <ng-select>
   <ng-option *ngFor="let postItem of posts$ | async" [value]="postItem.id">{{
     postItem.title
   }}</ng-option>
+</ng-select> -->
+
+<ng-select
+  [items]="posts$ | async"
+  bindLabel="title"
+  bindValue="id"
+  [clearable]="true"
+>
 </ng-select>
 
 <br />
 
-<ng-select>
-  <ng-option *ngFor="let item of countries$ | async">{{ item.name }}</ng-option>
+<h1>Location</h1>
+
+<ng-select
+  [items]="location$ | async"
+  bindLabel="name"
+  bindValue="id"
+  [clearable]="true"
+>
 </ng-select>
 
 <br />
 
-<div style="text-decoration: underline">Axis</div>
+<!-- <div style="text-decoration: underline">Axis</div>
 <div *ngFor="let item of axis$ | async">
   <div>{{ item }}</div>
-</div>
+</div> -->
+
+<h1>Axis</h1>
 
 <ng-select
   [items]="axis$ | async"

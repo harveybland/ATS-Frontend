@@ -22,13 +22,13 @@ export interface UsersModel {
     isDeleted?: false
 }
 
-export interface countriesModel {
+export interface locationModel {
     name: string;
     code: string;
 }
 
-export interface titlesModel {
-    title: string;
+export interface IOptionLookup {
+    value: string
 }
 
 export interface VacanciesModel {
@@ -40,4 +40,11 @@ export interface VacanciesModel {
     employmentType?: string;
     contractType?: string;
     location?: string;
+}
+
+export enum MenuItemTypes {
+    DASHBOARD,
+    VACANCY,
+    USERS,
+    POSTS
 }

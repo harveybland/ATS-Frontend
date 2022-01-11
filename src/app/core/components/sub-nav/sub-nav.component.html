@@ -1,10 +1,37 @@
-<div class="sub-nav">
-  <div>
-    <button (click)="backClicked()">Back</button>
-    <!-- <a href="/">Back</a> -->
-  </div>
-  <div>
-    <p>sub-nav works!</p>
-  </div>
-  <div></div>
+<div class="sub-header--inner" [ngSwitch]="menu">
+  <ul *ngSwitchCase="menuSelection.DASHBOARD">
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/vacancy/vacancies'">Vacancies </a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/users/users'">Users </a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/posts'">Posts </a>
+    </li>
+  </ul>
+
+  <ul *ngSwitchCase="menuSelection.VACANCY">
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/vacancy/vacancies'">Vacancies </a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/vacancy/vacancies/create'">Create </a>
+    </li>
+  </ul>
+
+  <ul *ngSwitchCase="menuSelection.USERS">
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/users/users'">Users</a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/users/users/create'">Create</a>
+    </li>
+  </ul>
+
+  <ul *ngSwitchCase="menuSelection.POSTS">
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/posts'">Posts</a>
+    </li>
+  </ul>
 </div>

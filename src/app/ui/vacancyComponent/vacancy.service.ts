@@ -1,3 +1,4 @@
+import { StorageService } from './../../core/storage/storage.service';
 import { HttpClient } from '@angular/common/http';
 import { UsersModel, VacanciesModel } from './../../core/interface/api';
 import { Injectable } from '@angular/core';
@@ -14,12 +15,28 @@ export class VacancyService {
   vacancies$ = this._vacancies$.asObservable();
 
   constructor(private _configService: ConfigService,
+    private storageService: StorageService,
     private http: HttpClient) { }
 
   getVacancies() {
     return this.http.get<VacanciesModel[]>(this._configService.vacancies()).pipe(map(resp => {
       this._vacancies$.next(resp)
     }))
+  }
+
+  getVacancy(id: number) {
+    return this.http.get<VacanciesModel>(this._configService.vacancy(id))
+  }
+
+  createVacancy(model: VacanciesModel) {
+    return this.http.post<VacanciesModel[]>(this._configService.vacancies(), model).pipe(map(resp => {
+      this.storageService.clearItemTimeoutStorage(this._configService.vacancies());
+      this._vacancies$.next(resp)
+    }))
+  }
+
+  saveVacancy() {
+
   }
 
 
