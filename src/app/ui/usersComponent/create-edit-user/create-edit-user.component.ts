@@ -13,7 +13,7 @@ import { UsersModel } from 'src/app/core/interface/api';
 })
 export class CreateEditUserComponent implements OnInit {
 
-  titles$ = this._vacancyLookupService.titles$
+  titles$ = this._usersService.titles$
 
   form: FormGroup = this._formBuilder.group({
     _id: new FormControl(''),
@@ -36,12 +36,11 @@ export class CreateEditUserComponent implements OnInit {
 
   constructor(private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
-    private _vacancyLookupService: VacancyLookupService,
     public _router: Router,
     private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this._vacancyLookupService.getTitles().subscribe()
+    this._usersService.getTitles().subscribe()
     if (this._router.url != '/users/users/create') {
       this._activatedRoute.params.pipe(
         map(params => {

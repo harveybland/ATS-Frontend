@@ -1,9 +1,7 @@
 <div class="flex">
   <div class="start"><h1>Vacancies</h1></div>
   <div class="end">
-    <button mat-raised-button>
-      <a routerLink="create">Create</a>
-    </button>
+    <a routerLink="create"> <button mat-raised-button>Create</button></a>
   </div>
 </div>
 <ul *ngFor="let item of vacancies$ | async" class="simple-bar">

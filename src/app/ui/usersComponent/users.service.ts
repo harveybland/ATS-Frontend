@@ -1,6 +1,6 @@
 import { StorageService } from './../../core/storage/storage.service';
 import { HttpClient } from '@angular/common/http';
-import { UsersModel } from './../../core/interface/api';
+import { IOptionLookup, UsersModel } from './../../core/interface/api';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ConfigService } from 'src/app/core/client/config.service';
@@ -13,6 +13,9 @@ export class UsersService {
 
   private _users$ = new BehaviorSubject<UsersModel[]>([]);
   users$ = this._users$.asObservable();
+
+  private _titles$ = new BehaviorSubject<IOptionLookup[]>([]);
+  titles$ = this._titles$.asObservable();
 
   constructor(private _configService: ConfigService,
     private storageService: StorageService,
@@ -48,6 +51,13 @@ export class UsersService {
       this.storageService.clearItemTimeoutStorage(this._configService.users());
       this._users$.next(resp)
     }))
+  }
+
+  // Loojup
+  getTitles() {
+    return this.http.get<IOptionLookup[]>(this._configService.titles()).pipe(map(resp => {
+      this._titles$.next(resp)
+    }));
   }
 
 }

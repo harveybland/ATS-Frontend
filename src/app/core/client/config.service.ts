@@ -25,13 +25,17 @@ export class ConfigService {
     return `http://localhost:4002/api/vacancy/${id}`
   }
 
+  createVacancy() {
+    return `http://localhost:4002/api/vacancy`
+  }
+
   // Data 
   posts() {
     return 'https://jsonplaceholder.typicode.com/posts'
   }
 
-  location() {
-    return 'http://localhost:4002/api/location'
+  countries() {
+    return 'http://localhost:4002/api/countries'
   }
 
   titles() {
@@ -52,5 +56,9 @@ export class ConfigService {
 
   employmentType() {
     return 'http://localhost:4002/api/employmentType'
+  }
+
+  location() {
+    return 'http://localhost:4002/api/location'
   }
 } 

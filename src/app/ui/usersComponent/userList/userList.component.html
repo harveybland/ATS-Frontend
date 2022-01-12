@@ -1,12 +1,11 @@
 <div class="flex">
   <div class="start"><h1>Users</h1></div>
   <div class="end">
-    <button mat-raised-button type="button">
-      <a routerLink="create">Create</a>
-    </button>
+    <a routerLink="create"> <button mat-raised-button>Create</button></a>
   </div>
 </div>
 <ul *ngFor="let item of users$ | async" class="simple-bar">
+  <li>{{ item.title }}</li>
   <li>{{ item.firstname }}</li>
   <li>{{ item.surname }}</li>
   <div class="end">

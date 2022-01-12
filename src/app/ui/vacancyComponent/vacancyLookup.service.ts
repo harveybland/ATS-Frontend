@@ -13,9 +13,6 @@ export class VacancyLookupService {
   private _location$ = new BehaviorSubject<locationModel[]>([]);
   location$ = this._location$.asObservable();
 
-  private _titles$ = new BehaviorSubject<IOptionLookup[]>([]);
-  titles$ = this._titles$.asObservable();
-
   private _businessArea$ = new BehaviorSubject<IOptionLookup[]>([]);
   businessArea$ = this._businessArea$.asObservable();
 
@@ -35,12 +32,6 @@ export class VacancyLookupService {
     return this.http.get<locationModel[]>(this._configService.location()).pipe(map(resp => {
       this._location$.next(resp)
     }))
-  }
-
-  getTitles() {
-    return this.http.get<IOptionLookup[]>(this._configService.titles()).pipe(map(resp => {
-      this._titles$.next(resp)
-    }));
   }
 
   getBusinessArea() {

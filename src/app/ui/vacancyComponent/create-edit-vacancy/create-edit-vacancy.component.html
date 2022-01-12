@@ -1,3 +1,7 @@
+<div class="flex title">
+  <div class="start"><h1>Vacancy</h1></div>
+  <div class="end"></div>
+</div>
 <div class="form-body-max">
   <form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
@@ -16,7 +20,7 @@
         </label>
       </div>
       <div class="col-1"></div>
-      <div class="col-3">
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Salary</span>
@@ -31,6 +35,7 @@
           />
         </label>
       </div>
+      <div class="col-1"></div>
       <div class="col-3">
         <label class="input-wrapper">
           <div class="input-header">
@@ -42,6 +47,7 @@
             formControlName="salaryType"
             placeholder="Salary Type"
             [clearable]="true"
+            bindValue="value"
           >
           </ng-select>
         </label>
@@ -58,6 +64,7 @@
             formControlName="businessArea"
             placeholder="Business Area"
             [clearable]="true"
+            bindValue="value"
           >
           </ng-select>
         </label>
@@ -73,6 +80,7 @@
             formControlName="employmentType"
             placeholder="Employment Type"
             [clearable]="true"
+            bindValue="value"
           >
           </ng-select>
         </label>
@@ -88,6 +96,7 @@
             formControlName="contractType"
             placeholder="Contract Type"
             [clearable]="true"
+            bindValue="value"
           >
           </ng-select>
         </label>
@@ -103,6 +112,7 @@
             formControlName="location"
             placeholder="Location"
             [clearable]="true"
+            bindValue="name"
           >
           </ng-select>
         </label>

@@ -12,7 +12,10 @@
   </ul>
 
   <ul *ngSwitchCase="menuSelection.VACANCY">
-    <li routerLinkActive="is-selected">
+    <li
+      routerLinkActive="is-selected"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <a [routerLink]="'/vacancy/vacancies'">Vacancies </a>
     </li>
     <li routerLinkActive="is-selected">
@@ -21,7 +24,10 @@
   </ul>
 
   <ul *ngSwitchCase="menuSelection.USERS">
-    <li routerLinkActive="is-selected">
+    <li
+      routerLinkActive="is-selected"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <a [routerLink]="'/users/users'">Users</a>
     </li>
     <li routerLinkActive="is-selected">

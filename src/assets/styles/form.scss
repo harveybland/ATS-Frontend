@@ -29,6 +29,10 @@
   display: flex;
 }
 
+.title {
+  padding-bottom: 20px;
+}
+
 .start {
   display: flex;
   align-items: center;
@@ -50,5 +54,5 @@
   min-height: 32px;
   align-items: center;
   padding: 0 10px;
-  width: 80%;
+  width: 100%;
 }

@@ -29,7 +29,8 @@ export class VacancyService {
   }
 
   createVacancy(model: VacanciesModel) {
-    return this.http.post<VacanciesModel[]>(this._configService.vacancies(), model).pipe(map(resp => {
+    return this.http.post<VacanciesModel[]>(this._configService.createVacancy(), model).pipe(map(resp => {
+      console.log(resp)
       this.storageService.clearItemTimeoutStorage(this._configService.vacancies());
       this._vacancies$.next(resp)
     }))

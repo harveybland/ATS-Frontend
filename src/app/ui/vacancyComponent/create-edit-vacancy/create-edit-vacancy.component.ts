@@ -15,7 +15,6 @@ import { VacanciesModel } from 'src/app/core/interface/api';
 export class CreateEditVacancyComponent implements OnInit {
 
   location$ = this._vacancyLookupService.location$;
-  titles$ = this._vacancyLookupService.titles$;
   businessArea$ = this._vacancyLookupService.businessArea$;
   contractType$ = this._vacancyLookupService.contractTypes$;
   salaryType$ = this._vacancyLookupService.salaryTypes$;
@@ -40,9 +39,9 @@ export class CreateEditVacancyComponent implements OnInit {
     private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    forkJoin([this._vacancyLookupService.getLocation(), this._vacancyLookupService.getTitles(),
-    this._vacancyLookupService.getBusinessArea(), this._vacancyLookupService.getSalaryTypes(),
-    this._vacancyLookupService.getContractTypes(), this._vacancyLookupService.getEmploymentTypes()]).subscribe();
+    forkJoin([this._vacancyLookupService.getLocation(), this._vacancyLookupService.getBusinessArea(),
+    this._vacancyLookupService.getSalaryTypes(), this._vacancyLookupService.getContractTypes(),
+    this._vacancyLookupService.getEmploymentTypes()]).subscribe();
 
     if (this._router.url != '/vacancy/vacancies/create') {
       this._activatedRoute.params.pipe(
@@ -59,11 +58,26 @@ export class CreateEditVacancyComponent implements OnInit {
   }
 
   onSubmit() {
-
+    let model = this.vacancyModel();
+    this._vacancyService.createVacancy(model).subscribe(data => {
+      this._router.navigateByUrl('/vacancy/vacancies');
+    });
   }
 
   save() {
 
+  }
+
+  vacancyModel() {
+    return {
+      jobTitle: this.form.controls.jobTitle.value,
+      salary: this.form.controls.salary.value,
+      salaryType: this.form.controls.salaryType.value,
+      businessArea: this.form.controls.businessArea.value,
+      employmentType: this.form.controls.employmentType.value,
+      contractType: this.form.controls.contractType.value,
+      location: this.form.controls.location.value,
+    }
   }
 
 }

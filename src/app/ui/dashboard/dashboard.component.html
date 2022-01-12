@@ -1,19 +1,18 @@
-<div>
-  <div class="title">
-    <h1>Dashboard</h1>
-  </div>
+<div class="dashboard">
   <div class="data">
     <div>
       <div>Vacancies</div>
-      <div>100</div>
+      <div>{{ (vacancies$ | async)?.length }}</div>
     </div>
     <div>
       <div>Users</div>
-      <div>100</div>
+      <div>{{ (users$ | async)?.length }}</div>
     </div>
     <div>
       <div>Posts</div>
-      <div>100</div>
+      <div>{{ (posts$ | async)?.length }}</div>
     </div>
   </div>
 </div>
+
+<hr />

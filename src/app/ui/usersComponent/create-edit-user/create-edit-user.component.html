@@ -1,3 +1,7 @@
+<div class="flex title">
+  <div class="start"><h1>User</h1></div>
+  <div class="end"></div>
+</div>
 <div class="form-body-max">
   <form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
@@ -7,18 +11,18 @@
             <span class="input__title">Title</span>
           </div>
           <ng-select
-            [clearable]="true"
             [items]="titles$ | async"
-            formControlInput="titles"
             bindLabel="value"
+            formControlName="title"
             placeholder="Title"
-            bindValue="id"
+            [clearable]="true"
+            bindValue="_id"
           >
           </ng-select>
         </label>
       </div>
       <div class="col-9"></div>
-      <div class="col-3">
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">First Name</span>
@@ -31,7 +35,8 @@
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Surname</span>
@@ -44,8 +49,9 @@
           />
         </label>
       </div>
+      <div class="col-1"></div>
       <div class="col-6"></div>
-      <div class="col-3">
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Mobile</span>
@@ -54,12 +60,12 @@
             name="mobile"
             formControlName="mobile"
             class="input"
-            type="number"
             placeholder="Mobile"
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">DOB</span>
@@ -72,7 +78,8 @@
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Age</span>
@@ -85,7 +92,8 @@
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Address</span>
@@ -98,7 +106,8 @@
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">City</span>
@@ -111,7 +120,8 @@
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">County</span>
@@ -124,7 +134,8 @@
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Country</span>
@@ -137,8 +148,8 @@
           />
         </label>
       </div>
-
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Postcode</span>
@@ -151,7 +162,8 @@
           />
         </label>
       </div>
-      <div class="col-3">
+      <div class="col-1"></div>
+      <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
             <span class="input__title">Email</span>
@@ -164,6 +176,7 @@
           />
         </label>
       </div>
+      <div class="col-1"></div>
     </div>
     <div *ngIf="this._router.url == '/users/users/create'">
       <button mat-raised-button color="primary" type="submit">Create</button>

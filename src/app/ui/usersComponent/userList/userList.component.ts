@@ -1,3 +1,4 @@
+import { tap } from 'rxjs/operators';
 import { UsersService } from '../users.service';
 import { Component, OnInit } from '@angular/core';
 import { UsersModel } from 'src/app/core/interface/api';
