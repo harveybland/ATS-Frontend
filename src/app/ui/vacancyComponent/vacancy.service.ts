@@ -36,8 +36,11 @@ export class VacancyService {
     }))
   }
 
-  saveVacancy() {
-
+  updateVacancy(id: number, model: VacanciesModel) {
+    return this.http.put<VacanciesModel[]>(this._configService.vacancy(id), model).pipe(map(resp => {
+      this.storageService.clearItemTimeoutStorage(this._configService.vacancies());
+      this._vacancies$.next(resp)
+    }))
   }
 
 

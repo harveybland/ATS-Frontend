@@ -30,7 +30,8 @@ export class CreateEditVacancyComponent implements OnInit {
     location: new FormControl(null)
   });
 
-  jobtitle: string;
+  jobtitle?: string;
+  vacancyId: number;
 
   constructor(private _activatedRoute: ActivatedRoute,
     public _router: Router,
@@ -49,7 +50,9 @@ export class CreateEditVacancyComponent implements OnInit {
           return params['id'] as number;
         }),
         switchMap(id => {
+          this.vacancyId = id;
           return this._vacancyService.getVacancy(id).pipe(tap(model => {
+            this.jobtitle = model.jobTitle;
             let vacancyModel: VacanciesModel = model;
             this.form.patchValue(vacancyModel)
           }))
@@ -65,7 +68,10 @@ export class CreateEditVacancyComponent implements OnInit {
   }
 
   save() {
-
+    let model = this.vacancyModel();
+    this._vacancyService.updateVacancy(this.vacancyId, model).subscribe(data => {
+      this._router.navigateByUrl('/vacancy/vacancies');
+    })
   }
 
   vacancyModel() {

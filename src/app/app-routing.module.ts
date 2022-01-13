@@ -10,7 +10,10 @@ const routes: Routes = [
     path: 'account',
     loadChildren: () => import('./account/account.module').then(o => o.AccountModule),
   },
-
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

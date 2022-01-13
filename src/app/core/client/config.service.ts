@@ -7,6 +7,16 @@ export class ConfigService {
 
   constructor() { }
 
+  // Account
+
+  createAccount() {
+    return `http://localhost:4002/api/createAccount`
+  }
+
+  login() {
+
+  }
+
   // Users
   users() {
     return 'http://localhost:4002/api/users'

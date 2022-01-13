@@ -16,19 +16,19 @@ export class CreateEditUserComponent implements OnInit {
   titles$ = this._usersService.titles$
 
   form: FormGroup = this._formBuilder.group({
-    _id: new FormControl(''),
-    title: new FormControl(''),
-    firstname: new FormControl(''),
-    surname: new FormControl(''),
-    address: new FormControl(''),
-    mobile: new FormControl(''),
-    age: new FormControl(''),
-    city: new FormControl(''),
-    county: new FormControl(''),
-    country: new FormControl(''),
-    email: new FormControl(''),
-    postcode: new FormControl(''),
-    DOB: new FormControl(''),
+    _id: new FormControl(null),
+    title: new FormControl(null),
+    firstname: new FormControl(null),
+    surname: new FormControl(null),
+    address: new FormControl(null),
+    mobile: new FormControl(null),
+    age: new FormControl(null),
+    city: new FormControl(null),
+    county: new FormControl(null),
+    country: new FormControl(null),
+    email: new FormControl(null),
+    postcode: new FormControl(null),
+    DOB: new FormControl(null),
   });
 
   username?: string;
@@ -49,7 +49,6 @@ export class CreateEditUserComponent implements OnInit {
         switchMap(id => {
           this.userId = id;
           return this._usersService.getUser(id).pipe(tap(model => {
-            console.log(model)
             this.username = model.firstname;
             let userModel: UsersModel = model;
             this.form.patchValue(userModel)

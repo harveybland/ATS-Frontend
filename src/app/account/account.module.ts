@@ -1,3 +1,6 @@
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccountComponent } from './account.component';
@@ -8,7 +11,28 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-
+  {
+    path: '',
+    component: AccountComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent
+      },
+      {
+        path: 'create-account',
+        component: CreateAccountComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'login'
+      }
+    ]
+  }
 ];
 
 @NgModule({
@@ -19,6 +43,11 @@ const routes: Routes = [
     ThirdPartyModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AccountComponent]
+  declarations: [
+    AccountComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    CreateAccountComponent
+  ]
 })
 export class AccountModule { }

@@ -1,3 +1,21 @@
+export interface JWT {
+    access_token: string;
+    clientId: string;
+    expires_in: number;
+    forename: string;
+    lastLoggedIn: string;
+    surname: string;
+    token_type: string;
+    userId: string;
+    userName: string;
+    roles: string;
+}
+
+export interface AccountModel {
+    username: string;
+    password: string;
+}
+
 export interface PostModel {
     userId?: number;
     id?: number;
