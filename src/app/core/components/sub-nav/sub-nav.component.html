@@ -7,6 +7,9 @@
       <a [routerLink]="'/users/users'">Users </a>
     </li>
     <li routerLinkActive="is-selected">
+      <a [routerLink]="'/search'">Search </a>
+    </li>
+    <li routerLinkActive="is-selected">
       <a [routerLink]="'/posts'">Posts </a>
     </li>
   </ul>
@@ -32,6 +35,15 @@
     </li>
     <li routerLinkActive="is-selected">
       <a [routerLink]="'/users/users/create'">Create</a>
+    </li>
+  </ul>
+
+  <ul *ngSwitchCase="menuSelection.SEARCH">
+    <li
+      routerLinkActive="is-selected"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="'/search'">Search</a>
     </li>
   </ul>
 

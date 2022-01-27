@@ -1,7 +1,11 @@
 <nav class="header">
   <div class="logo">
-    <h1><a routerLink="/">HarveyATS</a></h1>
-    <h1><a routerLink="/account">Login</a></h1>
+    <h1><a routerLink="/">ATS</a></h1>
+    <button mat-button [matMenuTriggerFor]="afterMenu">Hello User</button>
+    <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button mat-menu-item routerLink="/account">Login</button>
+      <button mat-menu-item routerLink="/dashboard">Logout</button>
+    </mat-menu>
   </div>
   <ul class="nav">
     <li routerLinkActive="is-active">
@@ -9,6 +13,7 @@
     </li>
     <li routerLinkActive="is-active"><a routerLink="/vacancy">Vacancy</a></li>
     <li routerLinkActive="is-active"><a routerLink="/users">Users</a></li>
-    <li routerLinkActive="is-active"><a routerLink="/posts">posts</a></li>
+    <li routerLinkActive="is-active"><a routerLink="/search">Search</a></li>
+    <li routerLinkActive="is-active"><a routerLink="/posts">Posts</a></li>
   </ul>
 </nav>

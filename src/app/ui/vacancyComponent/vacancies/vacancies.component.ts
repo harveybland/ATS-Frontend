@@ -1,4 +1,6 @@
+import { QuickViewComponent } from './QuickView/QuickView.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { VacancyService } from './../vacancy.service'
 
 @Component({
@@ -10,10 +12,19 @@ export class VacanciesComponent implements OnInit {
 
   vacancies$ = this._vacancyService.vacancies$
 
-  constructor(private _vacancyService: VacancyService) { }
+  constructor(private _vacancyService: VacancyService,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
     this._vacancyService.getVacancies().subscribe()
+  }
+
+  modalOpened(_id?: number) {
+    const dialogRef = this.dialog.open(QuickViewComponent, {
+      maxWidth: '768px',
+      data: _id,
+    });
   }
 
 }

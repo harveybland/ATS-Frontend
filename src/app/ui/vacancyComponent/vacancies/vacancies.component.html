@@ -8,18 +8,28 @@
   <li>{{ item.jobTitle }}</li>
   <li>{{ item.salary }}</li>
   <li>{{ item.salaryType }}</li>
-  <li>{{ item.businesArea }}</li>
+  <li>{{ item.businessArea }}</li>
   <li>{{ item.employmentType }}</li>
   <li>{{ item.contractType }}</li>
   <li>{{ item.location }}</li>
   <div class="end">
-    <button
-      mat-stroked-button
-      color="primary"
-      [routerLink]="['vacancy/', item._id]"
-    >
-      View
-    </button>
+    <div class="m-r">
+      <button mat-stroked-button (click)="modalOpened(item._id)">
+        Quick View
+      </button>
+    </div>
+    <div class="m-r">
+      <button mat-stroked-button color="warn">Delete</button>
+    </div>
+    <div>
+      <button
+        mat-stroked-button
+        color="primary"
+        [routerLink]="['vacancy/', item._id]"
+      >
+        View
+      </button>
+    </div>
   </div>
 </ul>
 

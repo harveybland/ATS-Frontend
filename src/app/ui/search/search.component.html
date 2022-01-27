@@ -1,12 +1,10 @@
-<div class="flex p-b">
-  <div class="start"><h1>Create Vacancy</h1></div>
-  <div class="p-l">
-    <h1>{{ this.jobtitle }}</h1>
+<div class="ats__body__inner">
+  <div class="flex p-b">
+    <div class="start"><h1>Search Vacancy</h1></div>
+    <div class="p-l"></div>
+    <div class="end"></div>
   </div>
-  <div class="end"></div>
-</div>
-<div class="form-body-max">
-  <form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form class="search__main search-open panel" (ngSubmit)="search()">
     <div class="row">
       <div class="col-2">
         <label class="input-wrapper">
@@ -15,7 +13,7 @@
           </div>
           <input
             name="jobTitle"
-            formControlName="jobTitle"
+            [(ngModel)]="jobTitle"
             class="input"
             placeholder="Job Title"
             class="input"
@@ -30,7 +28,7 @@
           </div>
           <input
             name="salary"
-            formControlName="salary"
+            [(ngModel)]="salary"
             class="input"
             placeholder="Salary"
             type="number"
@@ -45,9 +43,10 @@
             <span class="input__title">Salary Type</span>
           </div>
           <ng-select
+            name="salaryType"
             [items]="salaryType$ | async"
             bindLabel="value"
-            formControlName="salaryType"
+            [(ngModel)]="salaryType"
             placeholder="Salary Type"
             [clearable]="true"
             bindValue="value"
@@ -62,9 +61,10 @@
             <span class="input__title">Business Area</span>
           </div>
           <ng-select
+            name="businessArea"
             [items]="businessArea$ | async"
             bindLabel="value"
-            formControlName="businessArea"
+            [(ngModel)]="businessArea"
             placeholder="Business Area"
             [clearable]="true"
             bindValue="value"
@@ -78,9 +78,10 @@
             <span class="input__title">Employment Type</span>
           </div>
           <ng-select
+            name="employmentType"
             [items]="employmentType$ | async"
             bindLabel="value"
-            formControlName="employmentType"
+            [(ngModel)]="employmentType"
             placeholder="Employment Type"
             [clearable]="true"
             bindValue="value"
@@ -94,9 +95,10 @@
             <span class="input__title">Contract Type</span>
           </div>
           <ng-select
+            name="contractType"
             [items]="contractType$ | async"
             bindLabel="value"
-            formControlName="contractType"
+            [(ngModel)]="contractType"
             placeholder="Contract Type"
             [clearable]="true"
             bindValue="value"
@@ -105,14 +107,15 @@
         </label>
       </div>
       <div class="col-3">
-        <label class="input-wrapper">
+        <label class="input-wrapper" for="location">
           <div class="input-header">
             <span class="input__title">Location</span>
           </div>
           <ng-select
+            name="location"
             [items]="location$ | async"
             bindLabel="name"
-            formControlName="location"
+            [(ngModel)]="location"
             placeholder="Location"
             [clearable]="true"
             bindValue="name"
@@ -121,13 +124,30 @@
         </label>
       </div>
     </div>
-    <div *ngIf="this._router.url == '/vacancy/vacancies/create'">
-      <button mat-raised-button color="primary" type="submit">Create</button>
-    </div>
-    <div *ngIf="this._router.url != '/vacancy/vacancies/create'">
-      <button mat-raised-button color="primary" (click)="save()" type="button">
-        Save
-      </button>
+    <div class="col-3 t-r">
+      <button mat-raised-button color="primary" type="submit">Search</button>
     </div>
   </form>
+  <div class="search-header">
+    <div></div>
+    <div class="col-A">Job Title</div>
+    <div class="col-B">Salary</div>
+    <div class="col-C">Salary Type</div>
+    <div class="col-D">Business Area</div>
+    <div class="col-E">Employment Type</div>
+    <div class="col-F">Contract Type</div>
+    <div class="col-G">Location</div>
+    <div></div>
+  </div>
+  <div *ngFor="let item of vacancies$ | async">
+    <div class="search-list">
+      <div class="col-A">{{ item.jobTitle }}</div>
+      <div class="col-B">{{ item.salary }}</div>
+      <div class="col-C">{{ item.salaryType }}</div>
+      <div class="col-D">{{ item.businessArea }}</div>
+      <div class="col-E">{{ item.employmentType }}</div>
+      <div class="col-F">{{ item.contractType }}</div>
+      <div class="col-G">{{ item.location }}</div>
+    </div>
+  </div>
 </div>

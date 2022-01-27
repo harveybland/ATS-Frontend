@@ -34,6 +34,8 @@ export class SubNavComponent implements OnInit {
       this.menu = MenuItemTypes.USERS;
     } else if (url.indexOf('/posts') !== -1) {
       this.menu = MenuItemTypes.POSTS;
+    } else if (url.indexOf('/search') !== -1) {
+      this.menu = MenuItemTypes.SEARCH;
     } else {
       this.menu = MenuItemTypes.DASHBOARD;
     }

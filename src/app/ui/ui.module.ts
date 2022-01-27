@@ -27,6 +27,10 @@ const routes: Routes = [
         loadChildren: () => import('./postsComponent/posts.module').then(o => o.PostsModule),
       },
       {
+        path: 'search',
+        loadChildren: () => import('./search/search.module').then(o => o.SearchModule),
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'dashboard'

@@ -54,7 +54,7 @@ export interface VacanciesModel {
     jobTitle?: string;
     salary?: Number;
     salaryType?: string;
-    businesArea?: string;
+    businessArea?: string;
     employmentType?: string;
     contractType?: string;
     location?: string;
@@ -64,5 +64,6 @@ export enum MenuItemTypes {
     DASHBOARD,
     VACANCY,
     USERS,
+    SEARCH,
     POSTS
 }

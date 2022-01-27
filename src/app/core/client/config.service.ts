@@ -35,8 +35,8 @@ export class ConfigService {
     return `http://localhost:4002/api/vacancy/${id}`
   }
 
-  createVacancy() {
-    return `http://localhost:4002/api/vacancy`
+  get searchVacancy() {
+    return 'http://localhost:4002/api/searchVacancy?'
   }
 
   // Data 
