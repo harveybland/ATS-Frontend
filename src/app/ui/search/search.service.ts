@@ -49,7 +49,6 @@ export class SearchService {
     }
     this.storageService.clearTimeoutStorage();
     return this.http.get<VacanciesModel[]>(this._configService.searchVacancy, { params: params }).pipe(map(resp => {
-      console.log(resp)
       this._vacancies$.next(resp)
     }));
   }

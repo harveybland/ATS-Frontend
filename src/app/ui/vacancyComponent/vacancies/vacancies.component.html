@@ -6,9 +6,6 @@
 </div>
 <ul *ngFor="let item of vacancies$ | async" class="simple-bar">
   <li>{{ item.jobTitle }}</li>
-  <li>{{ item.salary }}</li>
-  <li>{{ item.salaryType }}</li>
-  <li>{{ item.businessArea }}</li>
   <li>{{ item.employmentType }}</li>
   <li>{{ item.contractType }}</li>
   <li>{{ item.location }}</li>
@@ -19,7 +16,9 @@
       </button>
     </div>
     <div class="m-r">
-      <button mat-stroked-button color="warn">Delete</button>
+      <button mat-stroked-button color="warn" (click)="remove(item)">
+        Delete
+      </button>
     </div>
     <div>
       <button
@@ -32,5 +31,3 @@
     </div>
   </div>
 </ul>
-
-<!-- <a [routerLink]="['vacancyView/', item._id]"></a> -->

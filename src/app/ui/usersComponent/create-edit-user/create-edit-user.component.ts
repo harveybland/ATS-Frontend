@@ -22,7 +22,6 @@ export class CreateEditUserComponent implements OnInit {
     surname: new FormControl(null),
     address: new FormControl(null),
     mobile: new FormControl(null),
-    age: new FormControl(null),
     city: new FormControl(null),
     county: new FormControl(null),
     country: new FormControl(null),
@@ -32,7 +31,9 @@ export class CreateEditUserComponent implements OnInit {
   });
 
   username?: string;
+  surname?: string;
   userId: number;
+  route = false;
 
   constructor(private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
@@ -42,6 +43,7 @@ export class CreateEditUserComponent implements OnInit {
   ngOnInit(): void {
     this._usersService.getTitles().subscribe()
     if (this._router.url != '/users/users/create') {
+      this.route = true
       this._activatedRoute.params.pipe(
         map(params => {
           return params['id'] as number;
@@ -50,6 +52,7 @@ export class CreateEditUserComponent implements OnInit {
           this.userId = id;
           return this._usersService.getUser(id).pipe(tap(model => {
             this.username = model.firstname;
+            this.surname = model.surname;
             let userModel: UsersModel = model;
             this.form.patchValue(userModel)
           }))
@@ -79,7 +82,6 @@ export class CreateEditUserComponent implements OnInit {
       surname: this.form.controls.surname.value,
       address: this.form.controls.address.value,
       mobile: this.form.controls.mobile.value,
-      age: this.form.controls.age.value,
       city: this.form.controls.city.value,
       county: this.form.controls.county.value,
       country: this.form.controls.country.value,

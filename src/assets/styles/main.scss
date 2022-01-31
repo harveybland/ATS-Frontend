@@ -7,6 +7,10 @@
   padding-left: 20px;
 }
 
+.p-lr {
+  padding: 0 20px;
+}
+
 // margin
 .m-r {
   margin-right: 20px;
@@ -14,4 +18,13 @@
 
 .m-sb {
   margin-bottom: 10px !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 4px 4px 0 0;
+  padding: 0em 0.75em 0 0.65em !important;
 }

@@ -2,6 +2,7 @@ import { QuickViewComponent } from './QuickView/QuickView.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { VacancyService } from './../vacancy.service'
+import { VacanciesModel } from 'src/app/core/interface/api';
 
 @Component({
   selector: 'app-vacancies',
@@ -25,6 +26,12 @@ export class VacanciesComponent implements OnInit {
       maxWidth: '768px',
       data: _id,
     });
+  }
+
+  remove(model: VacanciesModel) {
+    console.log(model._id)
+    model._id;
+    this._vacancyService.remove(model).subscribe();
   }
 
 }

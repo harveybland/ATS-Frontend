@@ -1,6 +1,12 @@
 <div class="flex p-b">
-  <div class="start"><h1>Create Vacancy</h1></div>
-  <div class="p-l">
+  <div class="start" *ngIf="!this.route">
+    <h1>Create Vacancy</h1>
+  </div>
+  <div class="start flex" *ngIf="this.route">
+    <h1>Vacancy</h1>
+    <span class="material-icons p-lr"> trending_flat </span>
+  </div>
+  <div class="flex" *ngIf="this.route">
     <h1>{{ this.jobtitle }}</h1>
   </div>
   <div class="end"></div>

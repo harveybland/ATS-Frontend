@@ -32,6 +32,7 @@ export class CreateEditVacancyComponent implements OnInit {
 
   jobtitle?: string;
   vacancyId: number;
+  route = false;
 
   constructor(private _activatedRoute: ActivatedRoute,
     public _router: Router,
@@ -45,6 +46,7 @@ export class CreateEditVacancyComponent implements OnInit {
     this._vacancyLookupService.getEmploymentTypes()]).subscribe();
 
     if (this._router.url != '/vacancy/vacancies/create') {
+      this.route = true
       this._activatedRoute.params.pipe(
         map(params => {
           return params['id'] as number;

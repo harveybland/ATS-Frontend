@@ -4,7 +4,7 @@ import { UsersModel, VacanciesModel } from './../../core/interface/api';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ConfigService } from 'src/app/core/client/config.service';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +42,13 @@ export class VacancyService {
     }))
   }
 
+  remove(model: VacanciesModel) {
+    return this.http.delete<VacanciesModel[]>(this._configService.vacancy(model._id!)).pipe(tap(resp => {
+      this.storageService.clearItemTimeoutStorage(this._configService.vacancies());
+      this.storageService.clearItemTimeoutStorage(this._configService.vacancy(model._id!));
+      this._vacancies$.next(resp)
+    }))
+  }
 
 
 }

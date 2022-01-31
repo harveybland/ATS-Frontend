@@ -1,5 +1,14 @@
-<div class="flex title">
-  <div class="start"><h1>Create User</h1></div>
+<div class="flex p-b">
+  <div class="start" *ngIf="!this.route">
+    <h1>Create User</h1>
+  </div>
+  <div class="start flex" *ngIf="this.route">
+    <h1>User</h1>
+    <span class="material-icons p-lr"> trending_flat </span>
+  </div>
+  <div *ngIf="this.route">
+    <h1>{{ this.username }} {{ this.surname }}</h1>
+  </div>
   <div class="end"></div>
 </div>
 <div class="form-body-max">
@@ -68,13 +77,13 @@
       <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
-            <span class="input__title">DOB</span>
+            <span class="input__title">Email</span>
           </div>
           <input
-            name="DOB"
-            formControlName="DOB"
+            name="email"
+            formControlName="email"
             class="input"
-            placeholder="DOB"
+            placeholder="Email"
           />
         </label>
       </div>
@@ -82,16 +91,25 @@
       <div class="col-2">
         <label class="input-wrapper">
           <div class="input-header">
-            <span class="input__title">Age</span>
+            <span class="input__title">Date Of Birth</span>
           </div>
-          <input
-            name="age"
-            formControlName="age"
-            class="input"
-            placeholder="Age"
-          />
+          <mat-form-field appearance="fill">
+            <input
+              matInput
+              type="text"
+              formControlName="DOB"
+              placeholder="dd/mm/yyyy"
+              [matDatepicker]="picker"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
         </label>
       </div>
+
       <div class="col-1"></div>
       <div class="col-2">
         <label class="input-wrapper">
@@ -163,19 +181,7 @@
         </label>
       </div>
       <div class="col-1"></div>
-      <div class="col-2">
-        <label class="input-wrapper">
-          <div class="input-header">
-            <span class="input__title">Email</span>
-          </div>
-          <input
-            name="email"
-            formControlName="email"
-            class="input"
-            placeholder="Email"
-          />
-        </label>
-      </div>
+
       <div class="col-1"></div>
     </div>
     <div *ngIf="this._router.url == '/users/users/create'">
