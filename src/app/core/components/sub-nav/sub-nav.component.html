@@ -52,4 +52,10 @@
       <a [routerLink]="'/posts'">Posts</a>
     </li>
   </ul>
+
+  <ul *ngSwitchCase="menuSelection.UPLOAD">
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/upload'">Upload</a>
+    </li>
+  </ul>
 </div>

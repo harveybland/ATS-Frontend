@@ -34,7 +34,6 @@ export class UsersService {
   createUser(model: UsersModel) {
     return this.http.post<UsersModel[]>(this._configService.users(), model).pipe(map(resp => {
       this.storageService.clearItemTimeoutStorage(this._configService.users());
-      console.log(resp)
       this._users$.next(resp)
     }))
   }
@@ -50,7 +49,6 @@ export class UsersService {
     return this.http.delete<UsersModel[]>(this._configService.user(model._id)).pipe(tap(resp => {
       this.storageService.clearItemTimeoutStorage(this._configService.users());
       this.storageService.clearItemTimeoutStorage(this._configService.user(model._id));
-      console.log(resp)
       this._users$.next(resp)
     }))
   }

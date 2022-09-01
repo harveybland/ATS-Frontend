@@ -23,12 +23,16 @@ const routes: Routes = [
         loadChildren: () => import('./usersComponent/users.module').then(o => o.UsersModule),
       },
       {
+        path: 'search',
+        loadChildren: () => import('./search/search.module').then(o => o.SearchModule),
+      },
+      {
         path: 'posts',
         loadChildren: () => import('./postsComponent/posts.module').then(o => o.PostsModule),
       },
       {
-        path: 'search',
-        loadChildren: () => import('./search/search.module').then(o => o.SearchModule),
+        path: 'upload',
+        loadChildren: () => import('./uploadComponent/upload.module').then(o => o.UploadModule),
       },
       {
         path: '',

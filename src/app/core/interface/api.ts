@@ -65,5 +65,6 @@ export enum MenuItemTypes {
     VACANCY,
     USERS,
     SEARCH,
-    POSTS
+    POSTS,
+    UPLOAD
 }

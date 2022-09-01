@@ -2,16 +2,16 @@
   <div class="start" *ngIf="!this.route">
     <h1>Create User</h1>
   </div>
-  <div class="start flex" *ngIf="this.route">
+  <div class="start flex" *ngIf="this.route && this.data">
     <h1>User</h1>
     <span class="material-icons p-lr"> trending_flat </span>
   </div>
-  <div *ngIf="this.route">
+  <div *ngIf="this.route && this.data">
     <h1>{{ this.username }} {{ this.surname }}</h1>
   </div>
   <div class="end"></div>
 </div>
-<div class="form-body-max">
+<div class="form-body-max" *ngIf="this.data">
   <form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-3">
@@ -193,4 +193,7 @@
       </button>
     </div>
   </form>
+</div>
+<div class="form-body-max" *ngIf="!this.data">
+  <div class="flex">{{ this.errorMessage }}</div>
 </div>

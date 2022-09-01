@@ -34,6 +34,8 @@ export class CreateEditUserComponent implements OnInit {
   surname?: string;
   userId: number;
   route = false;
+  errorMessage = '';
+  data: boolean = true;
 
   constructor(private _activatedRoute: ActivatedRoute,
     private _usersService: UsersService,
@@ -56,7 +58,10 @@ export class CreateEditUserComponent implements OnInit {
             let userModel: UsersModel = model;
             this.form.patchValue(userModel)
           }))
-        })).subscribe();
+        })).subscribe(() => { }, (err) => {
+          this.data = false,
+            this.errorMessage = err.error.text
+        });
     }
   }
 

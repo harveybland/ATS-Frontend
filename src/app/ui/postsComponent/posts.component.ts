@@ -1,6 +1,7 @@
 import { PostsService } from './posts.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { forkJoin } from 'rxjs';
+import { debounceTime, exhaustMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-posts',
@@ -15,11 +16,30 @@ export class PostsComponent implements OnInit {
 
   axis$: any;
 
+  isGreen: boolean = false;
+  isDisabled: boolean = false;
+
+  typeahead = new EventEmitter<string>();
+
   constructor(private _postsService: PostsService) { }
 
   ngOnInit() {
+    document.body.style.overflow = "hidden";
     forkJoin([this._postsService.getLocation(), this._postsService.getPosts()]).subscribe();
     this.axis$ = this._postsService.getAxis();
+
+    this.typeahead.pipe(
+      debounceTime(400),
+      exhaustMap(term => {
+        return this._postsService.getLocation();
+      })).subscribe();
   }
 
+  disable() {
+    document.body.style.overflow = "hidden";
+  }
+
+  enable() {
+    document.body.style.overflow = "initial";
+  }
 }
