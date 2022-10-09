@@ -31,10 +31,6 @@ const routes: Routes = [
         loadChildren: () => import('./postsComponent/posts.module').then(o => o.PostsModule),
       },
       {
-        path: 'upload',
-        loadChildren: () => import('./uploadComponent/upload.module').then(o => o.UploadModule),
-      },
-      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'dashboard'
