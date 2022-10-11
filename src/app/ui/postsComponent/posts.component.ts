@@ -35,11 +35,4 @@ export class PostsComponent implements OnInit {
       })).subscribe();
   }
 
-  disable() {
-    document.body.style.overflow = "hidden";
-  }
-
-  enable() {
-    document.body.style.overflow = "initial";
-  }
 }

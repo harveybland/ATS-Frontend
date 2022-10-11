@@ -7,6 +7,8 @@ export class ConfigService {
 
   constructor() { }
 
+  private _baseUrl = 'https://simpleats.azurewebsites.net';
+
   // Account
 
   createAccount() {
@@ -28,6 +30,7 @@ export class ConfigService {
 
   // Vacancies
   vacancies() {
+    // return `${this._baseUrl}/api/vacancies`
     return 'http://localhost:4002/api/vacancies'
   }
 

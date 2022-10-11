@@ -13,25 +13,14 @@
   }}</ng-option>
 </ng-select> -->
 
-  <ng-select
-    [items]="posts$ | async"
-    bindLabel="title"
-    [typeahead]="typeahead"
-    bindValue="id"
-    [clearable]="true"
-  >
+  <ng-select [items]="posts$ | async" bindLabel="title" [typeahead]="typeahead" bindValue="id" [clearable]="true">
   </ng-select>
 
   <br />
 
   <h1>Location</h1>
 
-  <ng-select
-    [items]="location$ | async"
-    bindLabel="name"
-    bindValue="id"
-    [clearable]="true"
-  >
+  <ng-select [items]="location$ | async" bindLabel="name" bindValue="id" [clearable]="true">
   </ng-select>
 
   <br />
@@ -43,28 +32,6 @@
 
   <h1>Axis</h1>
 
-  <ng-select
-    [items]="axis$ | async"
-    bindLabel="axis"
-    bindValue="id"
-    [clearable]="true"
-  >
+  <ng-select [items]="axis$ | async" bindLabel="axis" bindValue="id" [clearable]="true">
   </ng-select>
 </div>
-
-<button (click)="enable()">Enable</button>
-<button (click)="disable()">Disable</button>
-
-<div class="text">
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis minus
-  delectus sed similique? Sint repellendus consectetur placeat a odio, enim iure
-  doloremque tenetur doloribus debitis laboriosam tempora esse asperiores vero.
-</div>
-
-<!-- <section class="section1"></section>
-<section class="section2"></section>
-<section class="section3"></section> -->
-
-<h1 [ngClass]="isGreen ? 'text-green' : 'text-red'">Hello</h1>
-
-<input type="text" [disabled]="isDisabled" />

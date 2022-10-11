@@ -4,37 +4,21 @@
       <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="input-wrapper m-sb">
           <label>Username</label>
-          <input
-            type="text"
-            autocomplete="username"
-            formControlName="username"
-            name="Username"
-          />
+          <input type="text" autocomplete="username" formControlName="username" name="Username" />
           <!-- <span class="error" [hidden]="!loginForm.get('username').hasError('required')">Username is required</span>
                   <span class="error" [hidden]="!loginForm.get('username').hasError('email')">Invalid email address</span> -->
         </div>
         <div class="input-wrapper">
           <label>Password</label>
-          <input
-            type="password"
-            #passwordInput
-            name="password"
-            formControlName="password"
-            autocomplete="current-password"
-          />
+          <input type="password" #passwordInput name="password" formControlName="password"
+            autocomplete="current-password" />
           <!-- <span class="error" [hidden]="!loginForm.get('password').hasError('required')">Password is required</span>
                   <div (mouseup)="hidePassword()" (mousedown)="showPassword()" class="show__password" *ngIf="loginForm.get('password').value.length > 0">
                       Show password
                   </div> -->
         </div>
         <div class="m-sb">
-          <button
-            [routerLink]="'/dashboard'"
-            type="submit"
-            mat-flat-button
-            color="primary"
-            [disabled]="loginForm.invalid || !loginForm.enabled"
-          >
+          <button type="submit" mat-flat-button color="primary" [disabled]="loginForm.invalid || !loginForm.enabled">
             Login
           </button>
         </div>
