@@ -1,7 +1,7 @@
 <div class="sub-header--inner" [ngSwitch]="menu">
-  <ul *ngSwitchCase="menuSelection.DASHBOARD">
+  <!-- <ul *ngSwitchCase="menuSelection.DASHBOARD">
     <li routerLinkActive="is-selected">
-      <a [routerLink]="'/vacancy/vacancies'">Vacancies </a>
+      <a [routerLink]="'/vacancies'">Vacancies </a>
     </li>
     <li routerLinkActive="is-selected">
       <a [routerLink]="'/users/users'">Users </a>
@@ -9,45 +9,45 @@
     <li routerLinkActive="is-selected">
       <a [routerLink]="'/search'">Search </a>
     </li>
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/posts'">Posts </a>
-    </li>
-  </ul>
+  </ul> -->
 
   <ul *ngSwitchCase="menuSelection.VACANCY">
-    <li
-      routerLinkActive="is-selected"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <a [routerLink]="'/vacancy/vacancies'">Vacancies </a>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/vacancies'">Vacancies </a>
     </li>
     <li routerLinkActive="is-selected">
-      <a [routerLink]="'/vacancy/vacancies/create'">Create </a>
+      <a [routerLink]="'/users/users'">Users </a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/search'">Search </a>
     </li>
   </ul>
 
   <ul *ngSwitchCase="menuSelection.USERS">
-    <li
-      routerLinkActive="is-selected"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <a [routerLink]="'/users/users'">Users</a>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/vacancies'">Vacancies </a>
     </li>
     <li routerLinkActive="is-selected">
-      <a [routerLink]="'/users/users/create'">Create</a>
+      <a [routerLink]="'/users/users'">Users </a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/search'">Search </a>
     </li>
   </ul>
 
   <ul *ngSwitchCase="menuSelection.SEARCH">
-    <li
-      routerLinkActive="is-selected"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <a [routerLink]="'/search'">Search</a>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/vacancies'">Vacancies </a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/users/users'">Users </a>
+    </li>
+    <li routerLinkActive="is-selected">
+      <a [routerLink]="'/search'">Search </a>
     </li>
   </ul>
 
-  <ul *ngSwitchCase="menuSelection.POSTS">
+  <!-- <ul *ngSwitchCase="menuSelection.POSTS">
     <li routerLinkActive="is-selected">
       <a [routerLink]="'/posts'">Posts</a>
     </li>
@@ -57,5 +57,5 @@
     <li routerLinkActive="is-selected">
       <a [routerLink]="'/upload'">Upload</a>
     </li>
-  </ul>
+  </ul> -->
 </div>

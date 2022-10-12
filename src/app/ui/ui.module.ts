@@ -11,11 +11,7 @@ const routes: Routes = [
     component: UiComponent,
     children: [
       {
-        path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(o => o.DashboardModule),
-      },
-      {
-        path: 'vacancy',
+        path: 'vacancies',
         loadChildren: () => import('./vacancyComponent/vacancy.module').then(o => o.VacancyModule),
       },
       {
@@ -27,13 +23,9 @@ const routes: Routes = [
         loadChildren: () => import('./search/search.module').then(o => o.SearchModule),
       },
       {
-        path: 'posts',
-        loadChildren: () => import('./postsComponent/posts.module').then(o => o.PostsModule),
-      },
-      {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'dashboard'
+        redirectTo: 'vacancies'
       }
     ]
   }

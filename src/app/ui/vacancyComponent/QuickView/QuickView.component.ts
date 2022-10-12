@@ -1,4 +1,4 @@
-import { VacancyService } from './../../vacancy.service';
+import { VacancyService } from '../vacancy.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 

@@ -5,7 +5,6 @@ import { VacancyComponent } from './vacancy.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GeniusFormsModule } from 'src/app/core/modules/genius-forms.module';
 import { ThirdPartyModule } from 'src/app/core/modules/third-party.module';
-import { VacanciesComponent } from './vacancies/vacancies.component';
 
 const routes: Routes = [
   {
@@ -13,11 +12,7 @@ const routes: Routes = [
     component: VacancyComponent,
     children: [
       {
-        path: 'vacancies',
-        component: VacanciesComponent
-      },
-      {
-        path: 'vacancies/vacancy/:id',
+        path: 'vacancies/:id',
         component: CreateEditVacancyComponent
       },
       {
@@ -26,7 +21,6 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'vacancies'
       },
     ]
   }
@@ -41,7 +35,6 @@ const routes: Routes = [
   ],
   declarations: [
     VacancyComponent,
-    VacanciesComponent,
     CreateEditVacancyComponent
   ]
 })

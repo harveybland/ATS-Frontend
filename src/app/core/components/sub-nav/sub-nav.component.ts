@@ -28,18 +28,14 @@ export class SubNavComponent implements OnInit {
   }
 
   private _setMenu(url: string) {
-    if (url.indexOf('/vacancy') !== -1) {
-      this.menu = MenuItemTypes.VACANCY;
-    } else if (url.indexOf('/users') !== -1) {
+    if (url.indexOf('/users') !== -1) {
       this.menu = MenuItemTypes.USERS;
     } else if (url.indexOf('/posts') !== -1) {
       this.menu = MenuItemTypes.POSTS;
     } else if (url.indexOf('/search') !== -1) {
       this.menu = MenuItemTypes.SEARCH;
-    } else if (url.indexOf('/upload') !== -1) {
-      this.menu = MenuItemTypes.UPLOAD;
     } else {
-      this.menu = MenuItemTypes.DASHBOARD;
+      this.menu = MenuItemTypes.VACANCY;
     }
   }
 
