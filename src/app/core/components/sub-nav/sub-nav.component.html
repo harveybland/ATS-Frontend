@@ -1,21 +1,13 @@
 <div class="sub-header--inner" [ngSwitch]="menu">
-  <ul *ngSwitchCase="menuSelection.VACANCY">
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/vacancy'">Vacancy </a>
-    </li>
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/search'">Search </a>
-    </li>
-  </ul>
+  <div *ngSwitchCase="menuSelection.VACANCY">
+    <a [routerLink]="'/vacancy'" routerLinkActive="is-selected">Vacancy </a>
+    <a [routerLink]="'/search'" routerLinkActive="is-selected">Search </a>
+  </div>
 
-  <ul *ngSwitchCase="menuSelection.SEARCH">
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/vacancy'">Vacancy </a>
-    </li>
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/search'">Search </a>
-    </li>
-  </ul>
+  <div *ngSwitchCase="menuSelection.SEARCH">
+    <a [routerLink]="'/vacancy'" routerLinkActive="is-selected">Vacancy </a>
+    <a [routerLink]="'/search'" routerLinkActive="is-selected">Search </a>
+  </div>
 
   <!-- <ul *ngSwitchCase="menuSelection.DASHBOARD">
     <li routerLinkActive="is-selected">
