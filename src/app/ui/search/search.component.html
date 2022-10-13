@@ -1,6 +1,8 @@
 <div class="ats__body__inner">
   <div class="flex p-b">
-    <div class="start"><h1>Search Vacancy</h1></div>
+    <div class="start">
+      <h1>Search Vacancy</h1>
+    </div>
     <div class="p-l"></div>
     <div class="end"></div>
   </div>
@@ -11,13 +13,7 @@
           <div class="input-header">
             <span class="input__title">Job Title</span>
           </div>
-          <input
-            name="jobTitle"
-            [(ngModel)]="jobTitle"
-            class="input"
-            placeholder="Job Title"
-            class="input"
-          />
+          <input name="jobTitle" [(ngModel)]="jobTitle" class="input" placeholder="Job Title" class="input" />
         </label>
       </div>
       <div class="col-1"></div>
@@ -26,14 +22,7 @@
           <div class="input-header">
             <span class="input__title">Salary</span>
           </div>
-          <input
-            name="salary"
-            [(ngModel)]="salary"
-            class="input"
-            placeholder="Salary"
-            type="number"
-            class="input"
-          />
+          <input name="salary" [(ngModel)]="salary" class="input" placeholder="Salary" type="number" class="input" />
         </label>
       </div>
       <div class="col-1"></div>
@@ -42,15 +31,8 @@
           <div class="input-header">
             <span class="input__title">Salary Type</span>
           </div>
-          <ng-select
-            name="salaryType"
-            [items]="salaryType$ | async"
-            bindLabel="value"
-            [(ngModel)]="salaryType"
-            placeholder="Salary Type"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select name="salaryType" [items]="salaryType$ | async" bindLabel="value" [(ngModel)]="salaryType"
+            placeholder="Salary Type" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
@@ -60,15 +42,8 @@
           <div class="input-header">
             <span class="input__title">Business Area</span>
           </div>
-          <ng-select
-            name="businessArea"
-            [items]="businessArea$ | async"
-            bindLabel="value"
-            [(ngModel)]="businessArea"
-            placeholder="Business Area"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select name="businessArea" [items]="businessArea$ | async" bindLabel="value" [(ngModel)]="businessArea"
+            placeholder="Business Area" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
@@ -77,15 +52,8 @@
           <div class="input-header">
             <span class="input__title">Employment Type</span>
           </div>
-          <ng-select
-            name="employmentType"
-            [items]="employmentType$ | async"
-            bindLabel="value"
-            [(ngModel)]="employmentType"
-            placeholder="Employment Type"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select name="employmentType" [items]="employmentType$ | async" bindLabel="value"
+            [(ngModel)]="employmentType" placeholder="Employment Type" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
@@ -94,15 +62,8 @@
           <div class="input-header">
             <span class="input__title">Contract Type</span>
           </div>
-          <ng-select
-            name="contractType"
-            [items]="contractType$ | async"
-            bindLabel="value"
-            [(ngModel)]="contractType"
-            placeholder="Contract Type"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select name="contractType" [items]="contractType$ | async" bindLabel="value" [(ngModel)]="contractType"
+            placeholder="Contract Type" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
@@ -111,15 +72,8 @@
           <div class="input-header">
             <span class="input__title">Location</span>
           </div>
-          <ng-select
-            name="location"
-            [items]="location$ | async"
-            bindLabel="name"
-            [(ngModel)]="location"
-            placeholder="Location"
-            [clearable]="true"
-            bindValue="name"
-          >
+          <ng-select name="location" [items]="location$ | async" bindLabel="name" [(ngModel)]="location"
+            placeholder="Location" [clearable]="true" bindValue="name">
           </ng-select>
         </label>
       </div>
@@ -128,7 +82,7 @@
       <button mat-raised-button color="primary" type="submit">Search</button>
     </div>
   </form>
-  <div class="search-header">
+  <div [ngClass]="searched ? 'search-header' : 'hide'">
     <div></div>
     <div class="col-A">Job Title</div>
     <div class="col-B">Salary</div>

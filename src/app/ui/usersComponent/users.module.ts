@@ -26,8 +26,7 @@ const routes: Routes = [
         component: CreateEditUserComponent
       },
       {
-        path: '',
-        redirectTo: 'users'
+        path: ''
       }
     ]
   }

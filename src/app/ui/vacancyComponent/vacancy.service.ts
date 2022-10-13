@@ -1,6 +1,6 @@
 import { StorageService } from './../../core/storage/storage.service';
 import { HttpClient } from '@angular/common/http';
-import { UsersModel, VacanciesModel } from './../../core/interface/api';
+import { VacanciesModel } from './../../core/interface/api';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ConfigService } from 'src/app/core/client/config.service';

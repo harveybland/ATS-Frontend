@@ -20,6 +20,8 @@ export class SearchComponent implements OnInit {
 
   vacancies$ = this._searchService.vacancies$;
 
+  searched: boolean = false;
+
   location: string;
   contractType: string;
   employmentType: string;
@@ -39,6 +41,7 @@ export class SearchComponent implements OnInit {
   }
 
   search() {
+    this.searched = true;
     this._searchService.searchVacancy(this.location, this.contractType, this.employmentType,
       this.businessArea, this.salary, this.salaryType, this.jobTitle).subscribe();
   }

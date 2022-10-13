@@ -1,4 +1,5 @@
 .search-header {
+  display: block;
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -9,6 +10,10 @@
   top: 0;
   z-index: 3;
   position: sticky;
+}
+
+.hide {
+  display: none;
 }
 
 .col-A {

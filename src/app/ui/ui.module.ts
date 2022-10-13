@@ -11,7 +11,7 @@ const routes: Routes = [
     component: UiComponent,
     children: [
       {
-        path: 'vacancies',
+        path: 'vacancy',
         loadChildren: () => import('./vacancyComponent/vacancy.module').then(o => o.VacancyModule),
       },
       {
@@ -24,8 +24,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'vacancies'
+        redirectTo: 'vacancy'
       }
     ]
   }

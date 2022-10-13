@@ -1,35 +1,3 @@
 <div class="ats__body__inner">
-  <div class="flex">
-    <div class="start">
-      <h1>Vacancies</h1>
-      <span>{{ (vacancies$ | async)?.length }}</span>
-    </div>
-    <div class="end">
-      <a routerLink="vacancy/create"> <button mat-raised-button>Create</button></a>
-    </div>
-  </div>
-  <ul *ngFor="let item of vacancies$ | async" class="simple-bar">
-    <li>{{ item.jobTitle }}</li>
-    <li>{{ item.employmentType }}</li>
-    <li>{{ item.contractType }}</li>
-    <li>{{ item.location }}</li>
-    <li>{{ item._id }}</li>
-    <div class="end">
-      <div class="m-r">
-        <button mat-stroked-button (click)="modalOpened(item._id)">
-          Quick View
-        </button>
-      </div>
-      <div class="m-r">
-        <button mat-stroked-button color="warn" (click)="remove(item)">
-          Delete
-        </button>
-      </div>
-      <div>
-        <button mat-stroked-button color="primary" [routerLink]="['/', item._id]">
-          View
-        </button>
-      </div>
-    </div>
-  </ul>
+  <router-outlet></router-outlet>
 </div>
