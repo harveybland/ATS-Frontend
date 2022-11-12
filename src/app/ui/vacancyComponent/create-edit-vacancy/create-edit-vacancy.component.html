@@ -1,12 +1,16 @@
 <div class="flex p-b">
   <div class="start" *ngIf="!this.route">
+    <a routerLink="/vacancy">
+      <span class="box"></span>
+    </a>
     <h1>Create Vacancy</h1>
   </div>
-  <div class="start flex" *ngIf="this.route">
-    <h1>Vacancy</h1>
-    <span class="material-icons p-lr"> trending_flat </span>
-  </div>
   <div class="flex" *ngIf="this.route">
+    <a routerLink="/vacancy">
+      <span class="material-icons box">
+        navigate_before
+      </span>
+    </a>
     <h1>{{ this.jobtitle }}</h1>
   </div>
   <div class="end"></div>
@@ -15,114 +19,72 @@
   <form class="form-card" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-2">
-        <label class="input-wrapper">
+        <label>
           <div class="input-header">
             <span class="input__title">Job Title</span>
           </div>
-          <input
-            name="jobTitle"
-            formControlName="jobTitle"
-            class="input"
-            placeholder="Job Title"
-            class="input"
-          />
+          <input name="jobTitle" formControlName="jobTitle" class="input" placeholder="Job Title" class="input" />
         </label>
       </div>
       <div class="col-1"></div>
       <div class="col-2">
-        <label class="input-wrapper">
+        <label>
           <div class="input-header">
             <span class="input__title">Salary</span>
           </div>
-          <input
-            name="salary"
-            formControlName="salary"
-            class="input"
-            placeholder="Salary"
-            type="number"
-            class="input"
-          />
+          <input name="salary" formControlName="salary" class="input" placeholder="Salary" type="number"
+            class="input" />
         </label>
       </div>
       <div class="col-1"></div>
       <div class="col-3">
-        <label class="input-wrapper">
+        <label>
           <div class="input-header">
             <span class="input__title">Salary Type</span>
           </div>
-          <ng-select
-            [items]="salaryType$ | async"
-            bindLabel="value"
-            formControlName="salaryType"
-            placeholder="Salary Type"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select [items]="salaryType$ | async" bindLabel="value" formControlName="salaryType"
+            placeholder="Salary Type" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
       <div class="col-3"></div>
       <div class="col-3">
-        <label class="input-wrapper">
+        <label>
           <div class="input-header">
             <span class="input__title">Business Area</span>
           </div>
-          <ng-select
-            [items]="businessArea$ | async"
-            bindLabel="value"
-            formControlName="businessArea"
-            placeholder="Business Area"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select [items]="businessArea$ | async" bindLabel="value" formControlName="businessArea"
+            placeholder="Business Area" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
       <div class="col-3">
-        <label class="input-wrapper">
+        <label>
           <div class="input-header">
             <span class="input__title">Employment Type</span>
           </div>
-          <ng-select
-            [items]="employmentType$ | async"
-            bindLabel="value"
-            formControlName="employmentType"
-            placeholder="Employment Type"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select [items]="employmentType$ | async" bindLabel="value" formControlName="employmentType"
+            placeholder="Employment Type" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
       <div class="col-3">
-        <label class="input-wrapper">
+        <label>
           <div class="input-header">
             <span class="input__title">Contract Type</span>
           </div>
-          <ng-select
-            [items]="contractType$ | async"
-            bindLabel="value"
-            formControlName="contractType"
-            placeholder="Contract Type"
-            [clearable]="true"
-            bindValue="value"
-          >
+          <ng-select [items]="contractType$ | async" bindLabel="value" formControlName="contractType"
+            placeholder="Contract Type" [clearable]="true" bindValue="value">
           </ng-select>
         </label>
       </div>
       <div class="col-3">
-        <label class="input-wrapper">
+        <label>
           <div class="input-header">
             <span class="input__title">Location</span>
           </div>
-          <ng-select
-            [items]="location$ | async"
-            bindLabel="name"
-            formControlName="location"
-            placeholder="Location"
-            [clearable]="true"
-            bindValue="name"
-          >
+          <ng-select [items]="location$ | async" bindLabel="name" formControlName="location" placeholder="Location"
+            [clearable]="true" bindValue="name">
           </ng-select>
         </label>
       </div>
@@ -131,7 +93,7 @@
       <button mat-raised-button color="primary" type="submit">Create</button>
     </div>
     <div *ngIf="this._router.url != '/vacancy/vacancies/create'">
-      <button mat-raised-button color="primary" (click)="save()" type="button">
+      <button mat-raised-button color="primary" class="btn--blue" (click)="save()" type="button">
         Save
       </button>
     </div>

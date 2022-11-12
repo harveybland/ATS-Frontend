@@ -1,12 +1,26 @@
 <div class="sub-header--inner" [ngSwitch]="menu">
   <div *ngSwitchCase="menuSelection.VACANCY">
-    <a [routerLink]="'/vacancy'" routerLinkActive="is-selected">Vacancy </a>
-    <a [routerLink]="'/search'" routerLinkActive="is-selected">Search </a>
+    <a [routerLink]="'/vacancy'" routerLinkActive="is-selected"><span class="material-icons">
+        home
+      </span>Vacancy </a>
+    <a [routerLink]="'/users/users'" routerLinkActive="is-selected"><span class="material-icons">
+        home
+      </span>Users </a>
+    <a [routerLink]="'/search'" routerLinkActive="is-selected"><span class="material-icons">
+        search
+      </span>Search </a>
   </div>
 
   <div *ngSwitchCase="menuSelection.SEARCH">
-    <a [routerLink]="'/vacancy'" routerLinkActive="is-selected">Vacancy </a>
-    <a [routerLink]="'/search'" routerLinkActive="is-selected">Search </a>
+    <a [routerLink]="'/vacancy'" routerLinkActive="is-selected"><span class="material-icons">
+        home
+      </span>Vacancy </a>
+    <a [routerLink]="'/users/users'" routerLinkActive="is-selected"><span class="material-icons">
+        home
+      </span>Users </a>
+    <a [routerLink]="'/search'" routerLinkActive="is-selected"><span class="material-icons">
+        search
+      </span>Search </a>
   </div>
 
   <!-- <ul *ngSwitchCase="menuSelection.DASHBOARD">
@@ -22,17 +36,17 @@
   </ul> -->
 
 
-  <!-- <ul *ngSwitchCase="menuSelection.USERS">
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/vacancies'">Vacancies </a>
-    </li>
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/users/users'">Users </a>
-    </li>
-    <li routerLinkActive="is-selected">
-      <a [routerLink]="'/search'">Search </a>
-    </li>
-  </ul> -->
+  <div *ngSwitchCase="menuSelection.USERS">
+    <a [routerLink]="'/vacancy'" routerLinkActive="is-selected"><span class="material-icons">
+        home
+      </span>Vacancy </a>
+    <a [routerLink]="'/users/users'" routerLinkActive="is-selected"><span class="material-icons">
+        home
+      </span>Users </a>
+    <a [routerLink]="'/search'" routerLinkActive="is-selected"><span class="material-icons">
+        search
+      </span>Search </a>
+  </div>
 
   <!-- <ul *ngSwitchCase="menuSelection.POSTS">
     <li routerLinkActive="is-selected">
